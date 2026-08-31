@@ -1,4 +1,16 @@
+# Advanced Robots.txt for Advocate Divit Vinod
 User-agent: *
+Allow: /
+
+# Specifically authorize Googlebot-Image and Video to index rich content
+User-agent: Googlebot-Image
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.svg$
+
+User-agent: Googlebot-Video
 Allow: /
 
 Sitemap: https://pabitra2635.github.io/Adv-Divit-Vinod/sitemap.xml

@@ -372,12 +372,12 @@
                 <button onclick="toggleLanguage()" class="bg-mahogany-card text-gold border border-gold px-3 py-1.5 rounded text-xs font-bold hover:bg-gold hover:text-blue-950 transition flex items-center shadow-md mr-1 md:mr-3" aria-label="Translate to Hindi or Bengali">
                     <i class="fas fa-language mr-1.5 text-sm"></i> <span class="lang-text-span">বাংলা / हिन्दी</span>
                 </button>
-                <div class="hidden sm:flex space-x-4 items-center text-lg drop-shadow-sm">
+                <!-- <div class="hidden sm:flex space-x-4 items-center text-lg drop-shadow-sm">
                     <a href="https://www.youtube.com/@AdvocateDivitVinod" target="_blank" class="text-[#FF0000] hover:scale-110 transition" title="YouTube Legal Videos" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <!-- <a href="#" target="_blank" class="text-[#1877F2] hover:scale-110 transition" title="Facebook Page" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" class="text-[#1877F2] hover:scale-110 transition" title="Facebook Page" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" target="_blank" class="text-[#1DA1F2] hover:scale-110 transition" title="Twitter Handle" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" target="_blank" class="text-[#0A66C2] hover:scale-110 transition" title="LinkedIn Profile" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a> -->
-                </div>
+                    <a href="#" target="_blank" class="text-[#0A66C2] hover:scale-110 transition" title="LinkedIn Profile" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div> -->
             </div>
         </div>
     </header>
@@ -397,7 +397,21 @@
             <div class="hidden lg:flex space-x-4 xl:space-x-6 text-xs font-semibold tracking-wider">
                 <a itemprop="url" href="#home" class="text-gold flex items-center group" title="Best Lawyer in Patna"><i class="fas fa-home mr-2 group-hover:text-white transition"></i> <span itemprop="name">HOME</span></a>
                 <a itemprop="url" href="#about" class="hover:text-gold transition flex items-center group" title="Advocate Divit Vinod Profile"><i class="fas fa-user-tie mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> <span itemprop="name">PROFILE</span></a>
-                <a itemprop="url" href="#practice" class="hover:text-gold transition flex items-center group" title="Top Criminal and Divorce Services"><i class="fas fa-briefcase mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> <span itemprop="name">PRACTICE AREAS</span></a>
+                <div class="relative group flex items-center h-full py-2">
+                    <a itemprop="url" href="#practice" class="hover:text-gold transition flex items-center group" title="Top Criminal and Divorce Services">
+                        <i class="fas fa-briefcase mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> 
+                        <span itemprop="name">PRACTICE AREAS</span>
+                        <i class="fas fa-chevron-down ml-1 mt-0.5 text-[10px] text-gray-400 group-hover:text-gold transition"></i>
+                    </a>
+                    <div class="absolute top-full left-0 mt-0 w-64 bg-mahogany-card border border-mahogany-border/50 shadow-2xl rounded-b-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden transform origin-top scale-95 group-hover:scale-100 flex flex-col">
+                        <a href="practice-areas.html#high-court" class="px-5 py-3.5 hover:bg-[#1a0d08] hover:text-gold transition border-b border-mahogany-border/30 flex items-center text-xs tracking-widest uppercase"><i class="fas fa-balance-scale w-5 mr-3 text-gold opacity-70"></i> High Court</a>
+                        <a href="practice-areas.html#corporate" class="px-5 py-3.5 hover:bg-[#1a0d08] hover:text-gold transition border-b border-mahogany-border/30 flex items-center text-xs tracking-widest uppercase"><i class="fas fa-building w-5 mr-3 text-gold opacity-70"></i> Corporate</a>
+                        <a href="practice-areas.html#real-estate" class="px-5 py-3.5 hover:bg-[#1a0d08] hover:text-gold transition border-b border-mahogany-border/30 flex items-center text-xs tracking-widest uppercase"><i class="fas fa-home w-5 mr-3 text-gold opacity-70"></i> Real Estate</a>
+                        <a href="practice-areas.html#criminal" class="px-5 py-3.5 hover:bg-[#1a0d08] hover:text-gold transition border-b border-mahogany-border/30 flex items-center text-xs tracking-widest uppercase"><i class="fas fa-gavel w-5 mr-3 text-gold opacity-70"></i> Criminal</a>
+                        <a href="practice-areas.html#family" class="px-5 py-3.5 hover:bg-[#1a0d08] hover:text-gold transition border-b border-mahogany-border/30 flex items-center text-xs tracking-widest uppercase"><i class="fas fa-users w-5 mr-3 text-gold opacity-70"></i> Family</a>
+                        <a href="practice-areas.html#municipal" class="px-5 py-3.5 hover:bg-[#1a0d08] hover:text-gold transition flex items-center text-xs tracking-widest uppercase"><i class="fas fa-stamp w-5 mr-3 text-gold opacity-70"></i> Municipal & Notary</a>
+                    </div>
+                </div>
                 <a itemprop="url" href="#how-it-works" class="hover:text-gold transition flex items-center group" title="Legal Process in Patna"><i class="fas fa-project-diagram mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> <span itemprop="name">PROCESS</span></a>
                 <a itemprop="url" href="#outcomes" class="hover:text-gold transition flex items-center group" title="Successful Case Results"><i class="fas fa-gavel mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> <span itemprop="name">OUTCOMES</span></a>
                 <a itemprop="url" href="#blog" class="hover:text-gold transition flex items-center group" title="Legal Blog and Q&A"><i class="fas fa-newspaper mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> <span itemprop="name">BLOG & Q&A</span></a>
@@ -490,10 +504,7 @@
                 
                 <div class="flex flex-col sm:flex-row justify-center gap-3 md:gap-4 pointer-events-auto mb-6 md:mb-8" data-aos="zoom-in" data-aos-delay="600" data-aos-duration="800">
                     <a href="#contact" class="inline-block bg-gradient-logo font-bold text-xs md:text-sm tracking-wider px-8 py-3.5 hover:opacity-90 transition shadow-lg flex justify-center items-center text-blue-950" title="Book a Strategic Consultation with the Firm Head">
-                        <i class="fas fa-calendar-check mr-2 text-lg"></i> BOOK A STRATEGIC CONSULTATION
-                    </a>
-                    <a href="https://www.linkedin.com/in/divit-vinod-377891349/" target="_blank" rel="noopener noreferrer" class="inline-block border border-gold text-gold text-xs md:text-sm tracking-wider px-8 py-3.5 hover:bg-gold hover:text-blue-950 transition bg-mahogany-deep/60 backdrop-blur-sm shadow-lg flex justify-center items-center" title="Visit LinkedIn Profile">
-                        <i class="fab fa-linkedin mr-2 text-lg"></i> VISIT LINKEDIN
+                        <i class="fas fa-calendar-check mr-2 text-lg"></i> BOOK A CONSULTATION
                     </a>
                 </div>
 

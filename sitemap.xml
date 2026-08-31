@@ -40,6 +40,12 @@
             <image:loc>https://pabitra2635.github.io/Adv-Divit-Vinod/5-star-badge.png</image:loc>
             <image:title>5 Star Premium Rating Badge</image:title>
         </image:image>
+        <image:image><image:loc>https://pabitra2635.github.io/Adv-Divit-Vinod/high-court.jpg</image:loc><image:title>High Court Practice Area</image:title></image:image>
+        <image:image><image:loc>https://pabitra2635.github.io/Adv-Divit-Vinod/corporate.jpg</image:loc><image:title>Corporate Law Practice Area</image:title></image:image>
+        <image:image><image:loc>https://pabitra2635.github.io/Adv-Divit-Vinod/real-estate.webp</image:loc><image:title>Real Estate Law Practice Area</image:title></image:image>
+        <image:image><image:loc>https://pabitra2635.github.io/Adv-Divit-Vinod/criminal.webp</image:loc><image:title>Criminal Law Practice Area</image:title></image:image>
+        <image:image><image:loc>https://pabitra2635.github.io/Adv-Divit-Vinod/family.jpg</image:loc><image:title>Family Law Practice Area</image:title></image:image>
+        <image:image><image:loc>https://pabitra2635.github.io/Adv-Divit-Vinod/municipal-notary.jpg</image:loc><image:title>Municipal and Notary Practice Area</image:title></image:image>
     </url>
 
     <!-- Practice Areas Page -->

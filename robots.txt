@@ -1,0 +1,39 @@
+====================================================================
+
+ROBOTS.TXT FOR ADVOCATE A. REHMAN KHAN
+
+Optimized for maximum crawlability and SEO indexing
+
+====================================================================
+
+User-agent: *
+
+Allow crawling of all primary content, scripts, and styling
+
+Allow: /
+Allow: /.js
+Allow: /.css
+Allow: /.jpg
+Allow: /.jpeg
+Allow: /.png
+Allow: /.webp
+
+Disallow crawling of non-SEO relevant paths to save crawl budget
+
+Disallow: /admin/
+Disallow: /login/
+Disallow: /private/
+Disallow: /api/
+Disallow: /?search=
+Disallow: /&sort=
+
+Block AI scrapers that don't benefit search rankings (Optional, but good for content protection)
+
+User-agent: CCBot
+Disallow: /
+User-agent: GPTBot
+Disallow: /
+
+Point Google explicitly to the advanced XML sitemaps
+
+Sitemap: https://www.advocaterehmankhan.com/sitemap.xml

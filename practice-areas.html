@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Areas | Advocate Divit Vinod</title>
+    
+    <link rel="icon" type="image/png" href="https://i.ibb.co/xKXnHtwF/Screenshot-2026-08-30-201132.png">
+    
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#e57b15', 
+                        dark: '#1a1a1a',
+                        card: '#0a0a0a',
+                        beige: '#b59d81',
+                        mahogany: {
+                            deep: '#110804',
+                            base: '#1f110a',
+                            card: '#2c180e',
+                            border: '#3d2315'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .bg-mahogany-base {
+            background-color: #1f110a;
+            background-image: 
+                radial-gradient(circle at center, rgba(61, 35, 21, 0.4) 0%, rgba(17, 8, 4, 0.9) 100%);
+        }
+        .bg-mahogany-card {
+            background-color: #2c180e;
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #fde073 0%, #e57b15 50%, #9e2a0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+        .bg-gradient-logo {
+            background: linear-gradient(135deg, #fde073 0%, #e57b15 50%, #9e2a0b 100%);
+            color: #110804;
+        }
+        .decorative-lines hr {
+            margin: 3px 0;
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, #fde073, #e57b15, #9e2a0b);
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50 antialiased pb-16 sm:pb-0">
+
+
+
+    <header class="bg-mahogany-base text-white px-4 md:px-12 py-4 flex flex-col md:flex-row justify-between items-center border-b border-mahogany-border" itemscope itemtype="https://schema.org/WPHeader">
+        <div class="mb-4 md:mb-0 hidden md:flex items-center">
+            <a href="index.html" class="font-serif italic font-bold text-2xl md:text-3xl tracking-wide flex items-center hover:opacity-90 transition">
+                <img src="https://i.ibb.co/xKXnHtwF/Screenshot-2026-08-30-201132.png" alt="Advocate Divit Vinod Profile" class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover mr-3 border-2 border-gold shadow-sm">
+                <div class="flex flex-col leading-tight">
+                    <span class="text-gradient text-xl md:text-2xl">Patliputra Law & Retainers</span>
+                    <span class="text-xs text-gray-400 font-sans tracking-widest uppercase">Advocate Divit Vinod</span>
+                </div>
+            </a>
+        </div>
+        
+        <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
+            <div class="flex items-center">
+                <i class="far fa-envelope text-gold mr-3 text-lg hidden md:block"></i>
+                <div class="text-white text-center md:text-left">
+                    <p class="font-bold text-sm text-gold">
+                        <a href="mailto:advdivitvinod@gmail.com" class="hover:text-white transition">advdivitvinod@gmail.com</a>
+                    </p>
+                    <p class="text-xs text-gray-400">Email us directly</p>
+                </div>
+            </div>
+            <div class="flex items-center">
+                <i class="fas fa-phone-volume text-gold mr-3 text-lg hidden md:block"></i>
+                <div class="text-white text-center md:text-left">
+                    <p class="font-bold text-sm text-gold">
+                        <a href="tel:+919918324120" class="hover:text-white transition">+91 99183 24120</a>
+                    </p>
+                    <p class="text-xs text-gray-400">24/7 Legal Assistance</p>
+                </div>
+            </div>
+            <div class="flex space-x-3 pt-2 md:pt-0 items-center">
+                <button onclick="toggleLanguage()" class="bg-mahogany-card text-gold border border-gold px-3 py-1.5 rounded text-xs font-bold hover:bg-gold hover:text-mahogany-deep transition flex items-center shadow-md mr-1 md:mr-3" aria-label="Translate to Hindi or Bengali">
+                    <i class="fas fa-language mr-1.5 text-sm"></i> <span class="lang-text-span">বাংলা / हिन्दी</span>
+                </button>
+                <div class="hidden sm:flex space-x-4 items-center text-lg drop-shadow-sm">
+                    <a href="https://www.youtube.com/@AdvocateDivitVinod" target="_blank" class="text-[#FF0000] hover:scale-110 transition" title="YouTube Legal Videos" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="bg-mahogany-card text-white sticky top-0 z-50 shadow-lg border-b border-mahogany-border/50" itemscope itemtype="https://schema.org/SiteNavigationElement">
+        <div class="px-4 md:px-12 py-3 lg:py-4 flex justify-between items-center">
+            <div class="lg:hidden flex items-center">
+                <a href="index.html#home" class="flex items-center font-serif italic font-bold tracking-wide" title="Home - Advocate Divit Vinod">
+                    <img src="https://i.ibb.co/xKXnHtwF/Screenshot-2026-08-30-201132.png" alt="Advocate Divit Vinod Profile" class="w-8 h-8 rounded-full object-cover mr-2 border-2 border-gold shadow-sm">
+                    <div class="flex flex-col leading-tight">
+                        <span class="text-[16px] md:text-lg text-gradient">Patliputra Law & Retainers</span>
+                        <span class="text-[9px] md:text-[10px] text-gray-400 font-sans tracking-widest uppercase not-italic mt-0.5">Advocate Divit Vinod</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="hidden lg:flex space-x-4 xl:space-x-6 text-xs font-semibold tracking-wider">
+                <a itemprop="url" href="index.html#home" class="hover:text-gold transition flex items-center group" title="Best Lawyer in Patna"><i class="fas fa-home mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> <span itemprop="name">HOME</span></a>
+                <a itemprop="url" href="index.html#about" class="hover:text-gold transition flex items-center group" title="Advocate Divit Vinod Profile"><i class="fas fa-user-tie mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> <span itemprop="name">PROFILE</span></a>
+                <a itemprop="url" href="practice-areas.html" class="text-gold flex items-center group" title="Top Criminal and Divorce Services"><i class="fas fa-briefcase mr-2 group-hover:text-white transition"></i> <span itemprop="name">PRACTICE AREAS</span></a>
+                <a itemprop="url" href="index.html#how-it-works" class="hover:text-gold transition flex items-center group" title="Legal Process in Patna"><i class="fas fa-project-diagram mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> <span itemprop="name">PROCESS</span></a>
+                <a itemprop="url" href="index.html#outcomes" class="hover:text-gold transition flex items-center group" title="Successful Case Results"><i class="fas fa-gavel mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> <span itemprop="name">OUTCOMES</span></a>
+                <a itemprop="url" href="index.html#blog" class="hover:text-gold transition flex items-center group" title="Legal Blog and Q&A"><i class="fas fa-newspaper mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> <span itemprop="name">BLOG & Q&A</span></a>
+                <a itemprop="url" href="index.html#youtube" class="hover:text-gold transition flex items-center group" title="Legal Guide YouTube Channel"><i class="fab fa-youtube mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> <span itemprop="name">YOUTUBE</span></a>
+                <a itemprop="url" href="index.html#faq" class="hover:text-gold transition flex items-center group" title="Frequently Asked Legal Questions"><i class="fas fa-circle-question mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> <span itemprop="name">FAQ</span></a>
+            </div>
+
+            <div class="hidden lg:flex items-center space-x-4">
+                <div class="relative">
+                    <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm"></i>
+                    <input type="text" id="nav-search-desktop" onkeypress="executeNavSearch(event, this.value)" placeholder="Search articles..." aria-label="Search articles" class="w-40 xl:w-48 bg-mahogany-base border border-mahogany-border text-gray-200 text-xs p-2 pl-9 rounded-full focus:outline-none focus:border-gold transition placeholder-gray-500">
+                </div>
+                <a href="index.html#contact" class="border border-gold text-gold text-xs px-4 py-2 hover:bg-gold hover:text-mahogany-deep transition flex items-center whitespace-nowrap" title="Get Free Legal Consultation">
+                    <i class="far fa-calendar-check mr-2"></i> Free Consultation
+                </a>
+            </div>
+
+            <div class="lg:hidden flex items-center">
+                <button id="mobile-menu-btn" class="text-white focus:outline-none hover:text-gold" aria-label="Open Mobile Menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden bg-mahogany-base flex-col text-sm border-t border-mahogany-border">
+            <div class="px-4 py-3 border-b border-mahogany-border">
+                <div class="relative">
+                    <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm"></i>
+                    <input type="text" id="nav-search-mobile" onkeypress="executeNavSearch(event, this.value)" placeholder="Search articles or Q&A (Press Enter)..." aria-label="Search articles mobile" class="w-full bg-[#1a0d08] border border-mahogany-border text-gray-200 text-xs p-3 pl-9 rounded-full focus:outline-none focus:border-gold transition">
+                </div>
+            </div>
+            <a href="index.html#home" class="mobile-link px-4 py-3 border-b border-mahogany-border hover:text-gold"><i class="fas fa-home w-6 text-center"></i> HOME</a>
+            <a href="index.html#about" class="mobile-link px-4 py-3 border-b border-mahogany-border hover:text-gold"><i class="fas fa-user-tie w-6 text-center"></i> PROFILE</a>
+            <a href="practice-areas.html" class="mobile-link text-gold px-4 py-3 border-b border-mahogany-border"><i class="fas fa-briefcase w-6 text-center"></i> PRACTICE AREAS</a>
+            <a href="index.html#how-it-works" class="mobile-link px-4 py-3 border-b border-mahogany-border hover:text-gold"><i class="fas fa-project-diagram w-6 text-center"></i> PROCESS</a>
+            <a href="index.html#outcomes" class="mobile-link px-4 py-3 border-b border-mahogany-border hover:text-gold"><i class="fas fa-gavel w-6 text-center"></i> OUTCOMES</a>
+            <a href="index.html#blog" class="mobile-link px-4 py-3 border-b border-mahogany-border hover:text-gold"><i class="fas fa-newspaper w-6 text-center"></i> BLOG & Q&A</a>
+            <a href="index.html#youtube" class="mobile-link px-4 py-3 border-b border-mahogany-border hover:text-gold"><i class="fab fa-youtube w-6 text-center"></i> YOUTUBE</a>
+            <a href="index.html#faq" class="mobile-link px-4 py-3 border-b border-mahogany-border hover:text-gold"><i class="fas fa-circle-question w-6 text-center"></i> FAQ</a>
+            <a href="index.html#contact" class="mobile-link px-4 py-3 border-b border-mahogany-border hover:text-gold"><i class="fas fa-envelope w-6 text-center"></i> CONTACT</a>
+        </div>
+    </nav>
+
+    <main class="py-16 md:py-24 px-4 md:px-12">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex items-center justify-center w-full mb-12">
+                <div class="decorative-lines flex flex-col w-12 md:w-24 mr-6"><hr><hr><hr></div>
+                <h1 class="font-serif italic text-3xl md:text-5xl font-bold tracking-wide text-center flex flex-col items-center text-mahogany-deep">
+                    <i class="fas fa-balance-scale text-gold mb-4 text-4xl"></i>
+                    <span>A Complete Legal Infrastructure</span>
+                    <span class="text-xl md:text-2xl text-gray-500 mt-3 font-sans not-italic font-medium">We Leave No Branch of Law Uncovered.</span>
+                </h1>
+                <div class="decorative-lines flex flex-col w-12 md:w-24 ml-6"><hr><hr><hr></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 1 -->
+                <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8 hover:border-gold transition duration-300 group flex flex-col">
+                    <div class="text-gold text-4xl mb-4"><i class="fas fa-university"></i></div>
+                    <h3 class="font-serif font-bold text-xl text-mahogany-deep mb-4 group-hover:text-gold transition">1. High Court, Constitutional & Appellate Law</h3>
+                    <ul class="text-gray-600 text-sm space-y-2 list-disc list-inside">
+                        <li>Writ Petitions (Article 226/227) against arbitrary state/administrative action.</li>
+                        <li>Public Interest Litigation (PIL).</li>
+                        <li>High Court Statutory Criminal & Civil Appeals.</li>
+                        <li>Civil Revisions and Review Petitions.</li>
+                        <li>Quashing of FIRs (Section 482 CrPC).</li>
+                    </ul>
+                </div>
+                <!-- 2 -->
+                <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8 hover:border-gold transition duration-300 group flex flex-col">
+                    <div class="text-gold text-4xl mb-4"><i class="fas fa-building"></i></div>
+                    <h3 class="font-serif font-bold text-xl text-mahogany-deep mb-4 group-hover:text-gold transition">2. Corporate Retainership & Commercial Law</h3>
+                    <ul class="text-gray-600 text-sm space-y-2 list-disc list-inside">
+                        <li>Outsourced In-House Counsel (Daily Legal Operations).</li>
+                        <li>Commercial Contract Drafting (NDAs, SLAs, Joint Ventures, EPCs).</li>
+                        <li>NCLT & NCLAT Litigation (Company Law Disputes).</li>
+                        <li>Insolvency & Bankruptcy Code (IBC) Proceedings.</li>
+                        <li>Statutory Corporate Audits & Labor Law Compliance (EPF, ESI).</li>
+                    </ul>
+                </div>
+                <!-- 3 -->
+                <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8 hover:border-gold transition duration-300 group flex flex-col">
+                    <div class="text-gold text-4xl mb-4"><i class="fas fa-piggy-bank"></i></div>
+                    <h3 class="font-serif font-bold text-xl text-mahogany-deep mb-4 group-hover:text-gold transition">3. Banking, Finance & Debt Recovery</h3>
+                    <ul class="text-gray-600 text-sm space-y-2 list-disc list-inside">
+                        <li>DRT (Debt Recovery Tribunal) & DRAT Litigation.</li>
+                        <li>SARFAESI Act Enforcement and Defense against Bank Auctions.</li>
+                        <li>Cheque Bounce Prosecution & Defense (Sec 138 NI Act).</li>
+                        <li>Legal Demand Notices and Rapid Dues Recovery.</li>
+                        <li>Asset Tracing and Financial Fraud Litigation.</li>
+                    </ul>
+                </div>
+                <!-- 4 -->
+                <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8 hover:border-gold transition duration-300 group flex flex-col">
+                    <div class="text-gold text-4xl mb-4"><i class="fas fa-home"></i></div>
+                    <h3 class="font-serif font-bold text-xl text-mahogany-deep mb-4 group-hover:text-gold transition">4. Real Estate, Revenue & Property Law</h3>
+                    <ul class="text-gray-600 text-sm space-y-2 list-disc list-inside">
+                        <li>Land Mutation (Dakhil Kharij): End-to-end processing and dispute resolution.</li>
+                        <li>Property Registration: Sale Deeds, Lease Agreements, Gift Deeds.</li>
+                        <li>Title Suit Litigation, Title Chain Verification, and Jamabandi checks.</li>
+                        <li>RERA Disputes (Builder-Buyer, delayed possession).</li>
+                        <li>Land Encroachment, Partition Suits, and Boundary Disputes.</li>
+                    </ul>
+                </div>
+                <!-- 5 -->
+                <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8 hover:border-gold transition duration-300 group flex flex-col">
+                    <div class="text-gold text-4xl mb-4"><i class="fas fa-city"></i></div>
+                    <h3 class="font-serif font-bold text-xl text-mahogany-deep mb-4 group-hover:text-gold transition">5. Municipal, Local Body & Panchayat Law</h3>
+                    <ul class="text-gray-600 text-sm space-y-2 list-disc list-inside">
+                        <li>Municipal Corporation Disputes (Patna Municipal Corporation, etc.).</li>
+                        <li>Building Plan Approvals and Sanction Disputes.</li>
+                        <li>Defense against Municipal Demolition/Encroachment Notices.</li>
+                        <li>Property Tax and Municipal Taxation Disputes.</li>
+                        <li>Trade License procurement and litigation.</li>
+                        <li>Panchayati Raj Act matters and local election disputes.</li>
+                    </ul>
+                </div>
+                <!-- 6 -->
+                <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8 hover:border-gold transition duration-300 group flex flex-col">
+                    <div class="text-gold text-4xl mb-4"><i class="fas fa-file-signature"></i></div>
+                    <h3 class="font-serif font-bold text-xl text-mahogany-deep mb-4 group-hover:text-gold transition">6. Drafting, Notary & Legal Administration</h3>
+                    <ul class="text-gray-600 text-sm space-y-2 list-disc list-inside">
+                        <li>Affidavits: Drafting and execution of all types of legal affidavits.</li>
+                        <li>Notary Public Services: Document attestation and notarization.</li>
+                        <li>Power of Attorney: Drafting and registering GPA and SPA.</li>
+                        <li>Wills & Trusts: Drafting, registration, and Probate of Wills.</li>
+                        <li>Procurement of Certified Copies of Court Orders and Judgments.</li>
+                    </ul>
+                </div>
+                <!-- 7 -->
+                <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8 hover:border-gold transition duration-300 group flex flex-col">
+                    <div class="text-gold text-4xl mb-4"><i class="fas fa-gavel"></i></div>
+                    <h3 class="font-serif font-bold text-xl text-mahogany-deep mb-4 group-hover:text-gold transition">7. Criminal Defense & White-Collar Crimes</h3>
+                    <ul class="text-gray-600 text-sm space-y-2 list-disc list-inside">
+                        <li>Anticipatory Bail, Regular Bail, and Transit Bail.</li>
+                        <li>Economic Offences: ED (Enforcement Directorate), PMLA, and EOU investigations.</li>
+                        <li>Cyber Law: Online fraud, UPI fraud, lifting Bank Account Freezes.</li>
+                        <li>Severe Crimes (Murder, Attempt to Murder, Kidnapping).</li>
+                        <li>Customs, FEMA, DRI Seizures, and GST Evasion.</li>
+                    </ul>
+                </div>
+                <!-- 8 -->
+                <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8 hover:border-gold transition duration-300 group flex flex-col">
+                    <div class="text-gold text-4xl mb-4"><i class="fas fa-handshake"></i></div>
+                    <h3 class="font-serif font-bold text-xl text-mahogany-deep mb-4 group-hover:text-gold transition">8. Civil Litigation & Dispute Resolution</h3>
+                    <ul class="text-gray-600 text-sm space-y-2 list-disc list-inside">
+                        <li>Suits for Specific Performance of Contracts.</li>
+                        <li>Suits for Permanent and Mandatory Injunctions.</li>
+                        <li>Money Recovery Suits.</li>
+                        <li>Arbitration and Conciliation Proceedings.</li>
+                        <li>Motor Accidents Claims Tribunal (MACT) cases.</li>
+                    </ul>
+                </div>
+                <!-- 9 -->
+                <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8 hover:border-gold transition duration-300 group flex flex-col">
+                    <div class="text-gold text-4xl mb-4"><i class="fas fa-users"></i></div>
+                    <h3 class="font-serif font-bold text-xl text-mahogany-deep mb-4 group-hover:text-gold transition">9. Family, Matrimonial & Succession Law</h3>
+                    <ul class="text-gray-600 text-sm space-y-2 list-disc list-inside">
+                        <li>Mutual Consent and Contested Divorce.</li>
+                        <li>Defense against 498A (Cruelty) & Dowry Prohibition Act.</li>
+                        <li>Domestic Violence Act (DV Act) Proceedings.</li>
+                        <li>Child Custody and Maintenance (Sec 125 CrPC).</li>
+                        <li>Succession Certificates, Letters of Administration, and HUF Partitions.</li>
+                    </ul>
+                </div>
+                <!-- 10 -->
+                <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8 hover:border-gold transition duration-300 group flex flex-col">
+                    <div class="text-gold text-4xl mb-4"><i class="fas fa-user-tie"></i></div>
+                    <h3 class="font-serif font-bold text-xl text-mahogany-deep mb-4 group-hover:text-gold transition">10. Service, Employment & Labor Law</h3>
+                    <ul class="text-gray-600 text-sm space-y-2 list-disc list-inside">
+                        <li>CAT (Central Administrative Tribunal) and State Administrative Tribunal matters.</li>
+                        <li>Government Employee Disputes: Suspension, termination, promotion, and pension issues.</li>
+                        <li>Industrial Disputes Act and Workmen’s Compensation cases.</li>
+                        <li>Defense against POSH (Prevention of Sexual Harassment) allegations.</li>
+                    </ul>
+                </div>
+                <!-- 11 -->
+                <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8 hover:border-gold transition duration-300 group flex flex-col">
+                    <div class="text-gold text-4xl mb-4"><i class="fas fa-stethoscope"></i></div>
+                    <h3 class="font-serif font-bold text-xl text-mahogany-deep mb-4 group-hover:text-gold transition">11. Regulatory, Medical & Consumer Law</h3>
+                    <ul class="text-gray-600 text-sm space-y-2 list-disc list-inside">
+                        <li>Medical Negligence Defense for Doctors and Hospitals.</li>
+                        <li>Clinical Establishments Act Compliance.</li>
+                        <li>Consumer Protection Forums (District, State, National).</li>
+                        <li>Insurance Claim Repudiation Litigation.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <a href="index.html#contact" class="inline-block bg-gradient-logo font-bold text-sm tracking-wider px-10 py-4 hover:opacity-90 transition shadow-lg rounded text-mahogany-deep">
+                    <i class="fas fa-calendar-check mr-2 text-lg"></i> BOOK A STRATEGIC CONSULTATION
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-mahogany-base text-gray-300 border-t border-gold text-sm">
+        <div class="text-center py-6 border-t border-mahogany-border mt-8">
+            <p>&copy; 2026 Patliputra Law & Retainers. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    if (mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.remove('hidden');
+                        mobileMenu.classList.add('flex');
+                    } else {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('flex');
+                    }
+                });
+            }
+
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mobileMenu) {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('flex');
+                    }
+                });
+            });
+        });
+
+        window.executeNavSearch = function(event, value) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                window.location.href = `index.html#blog`;
+            }
+        };
+
+        window.toggleLanguage = function() {
+            window.location.href = `index.html`;
+        };
+    </script>
+    <!-- Mobile Floating Action Bar -->
+    <div class="md:hidden fixed bottom-4 left-4 right-4 z-[100] flex justify-between gap-2 p-1.5 backdrop-blur-lg bg-mahogany-base/90 border border-mahogany-border rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.7)] pointer-events-auto">
+        <a href="tel:+919918324120" class="flex-1 bg-mahogany-card text-gold text-[8px] font-bold uppercase tracking-wider py-2 rounded-lg flex flex-col items-center justify-center border border-gold/30 shadow-md active:scale-95 transition">
+            <i class="fas fa-phone-alt mb-1 text-sm"></i> Call Now
+        </a>
+        <a href="https://wa.me/919918324120" class="flex-1 bg-[#25D366] text-white text-[8px] font-bold uppercase tracking-wider py-2 rounded-lg flex flex-col items-center justify-center shadow-md active:scale-95 transition">
+            <i class="fab fa-whatsapp mb-1 text-sm"></i> WhatsApp
+        </a>
+        <a href="https://maps.app.goo.gl/wjvvvYnfDRSUQbGD6" class="flex-1 bg-mahogany-card text-gray-200 text-[8px] font-bold uppercase tracking-wider py-2 rounded-lg flex flex-col items-center justify-center border border-white/10 shadow-md active:scale-95 transition">
+            <i class="fas fa-map-marker-alt mb-1 text-sm"></i> Directions
+        </a>
+    </div>
+</body>
+</html>

@@ -452,7 +452,7 @@
             <div class="text-center text-white p-8 md:p-12 max-w-4xl relative z-20 pointer-events-none drop-shadow-2xl backdrop-blur-md bg-black/40 border border-white/10 rounded-2xl mx-4 mb-12 md:mb-16">
                 <h1 class="font-serif italic font-bold text-3xl sm:text-4xl md:text-6xl mb-4 md:mb-6 tracking-wide leading-tight drop-shadow-lg" data-aos="fade-down" data-aos-duration="1000">
                     <span class="text-gradient">Advocate Divit Vinod</span> <br/> 
-                    <span class="text-lg sm:text-xl md:text-3xl text-white mt-2 md:mt-3 inline-block font-sans not-italic">at Patna High Court | Lead Strategist & Founder</span>
+                    <span class="text-lg sm:text-xl md:text-3xl text-white mt-2 md:mt-3 inline-block font-sans not-italic">at Patna High Court | <span id="typewriter-text" class="text-gold font-bold">Lead Strategist & Founder</span><span class="animate-[pulse_1s_ease-in-out_infinite] font-bold text-gold">|</span></span>
                 </h1>
                 
                 <div class="mb-6 md:mb-8 min-h-[3rem] md:min-h-[4rem] flex justify-center items-center" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
@@ -2214,6 +2214,50 @@
                     window.prevSlide(); 
                 }
             }
+        }
+
+        // Typewriter Effect
+        const typewriterElement = document.getElementById('typewriter-text');
+        if (typewriterElement) {
+            const phrases = [
+                "Lead Strategist & Founder",
+                "Top Criminal Defense Lawyer",
+                "Family Law Specialist",
+                "High Court Advocate"
+            ];
+            let phraseIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let typingDelay = 80;
+            let erasingDelay = 40;
+            let newTextDelay = 2000;
+
+            function typeWriter() {
+                const currentPhrase = phrases[phraseIndex];
+                
+                if (isDeleting) {
+                    typewriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typewriterElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+
+                let typeSpeed = isDeleting ? erasingDelay : typingDelay;
+
+                if (!isDeleting && charIndex === currentPhrase.length) {
+                    typeSpeed = newTextDelay;
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    typeSpeed = 400;
+                }
+
+                setTimeout(typeWriter, typeSpeed);
+            }
+
+            setTimeout(typeWriter, 1500);
         }
     </script>
     <!-- Mobile Floating Action Bar -->

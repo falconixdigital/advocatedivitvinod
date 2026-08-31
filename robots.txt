@@ -13,4 +13,4 @@ Allow: /*.svg$
 User-agent: Googlebot-Video
 Allow: /
 
-Sitemap: https://pabitra2635.github.io/Adv-Divit-Vinod/sitemap.xml
+Sitemap: https://advocatedivitvinod.com/sitemap.xml

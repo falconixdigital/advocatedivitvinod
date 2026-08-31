@@ -1,7 +1,6 @@
 const fs = require('fs');
 let html = fs.readFileSync('index.html', 'utf8');
 
-// Add the 'parallax-blob' class to our abstract SVG shapes
 html = html.replace(/<svg class="absolute top-0 right-0/g, '<svg class="parallax-blob absolute top-0 right-0');
 html = html.replace(/<svg class="absolute bottom-0 left-0/g, '<svg class="parallax-blob absolute bottom-0 left-0');
 

@@ -78,17 +78,21 @@
                 url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
         }
         .text-gradient {
-            color: #D4AF37;
+            background: linear-gradient(135deg, #c5a059 0%, #f3e5ab 50%, #c5a059 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
         }
         .bg-gradient-logo {
-            background-color: #D4AF37;
+            background: linear-gradient(135deg, #c5a059 0%, #f3e5ab 50%, #c5a059 100%);
             color: #110804;
         }
         .decorative-lines hr {
             margin: 3px 0;
             border: none;
             height: 2px;
-            background-color: #D4AF37;
+            background: linear-gradient(to right, #c5a059, #f3e5ab, #c5a059);
             opacity: 0.9;
         }
         .faq-content {
@@ -151,6 +155,33 @@
         .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
         .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
         @keyframes typing-bounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+        @keyframes shimmer {
+            0% { transform: translateX(-200%) skewX(-45deg); }
+            100% { transform: translateX(200%) skewX(-45deg); }
+        }
+        .shimmer-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-effect::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 150%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                rgba(255,255,255,0) 0%,
+                rgba(255,255,255,0.03) 45%,
+                rgba(212,175,55,0.15) 50%,
+                rgba(255,255,255,0.03) 55%,
+                rgba(255,255,255,0) 100%
+            );
+            animation: shimmer 6s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 10;
+        }
     </style>
     
     <script type="application/ld+json">
@@ -351,7 +382,7 @@
         </div>
     </header>
 
-    <nav class="bg-mahogany-card text-white sticky top-0 z-50 shadow-lg border-b border-mahogany-border/50" itemscope itemtype="https://schema.org/SiteNavigationElement">
+    <nav class="bg-mahogany-card text-white sticky top-0 z-50 shadow-lg border-b border-mahogany-border/50 shimmer-effect" itemscope itemtype="https://schema.org/SiteNavigationElement">
         <div class="px-4 md:px-12 py-3 lg:py-4 flex justify-between items-center">
             <div class="lg:hidden flex items-center">
                 <a href="#home" class="flex items-center font-serif italic font-bold tracking-wide" title="Home - Advocate Divit Vinod">
@@ -542,7 +573,7 @@
                 <div class="flex items-center justify-center w-full mb-12" data-aos="fade-down">
                     <div class="decorative-lines flex flex-col w-12 md:w-20 mr-6"><hr><hr><hr></div>
                     <h2 class="font-serif italic text-3xl md:text-4xl font-bold tracking-wide flex items-center text-center">
-                        <span class="text-gradient">Advocate Profile</span>
+                        <span class="text-blue-950">Advocate Profile</span>
                     </h2>
                     <div class="decorative-lines flex flex-col w-12 md:w-20 ml-6"><hr><hr><hr></div>
                 </div>
@@ -746,7 +777,7 @@
                 <div class="flex items-center justify-center w-full mb-12" data-aos="fade-down">
                     <div class="decorative-lines flex flex-col w-16 md:w-32 mr-6"><hr><hr><hr></div>
                     <h2 class="font-serif italic text-3xl md:text-4xl font-bold tracking-wide text-center flex items-center">
-                        <i class="fas fa-briefcase text-gradient mr-3 text-2xl hidden md:block"></i> 
+                        <i class="fas fa-briefcase text-gold mr-3 text-2xl hidden md:block"></i> 
                         <span class="text-gradient">Practice Area Pillars</span>
                     </h2>
                     <div class="decorative-lines flex flex-col w-16 md:w-32 ml-6"><hr><hr><hr></div>
@@ -803,8 +834,8 @@
                 <div class="flex items-center justify-center w-full mb-16" data-aos="fade-down">
                     <div class="decorative-lines flex flex-col w-12 md:w-24 mr-6"><hr><hr><hr></div>
                     <h2 class="font-serif italic text-3xl md:text-4xl font-bold tracking-wide text-center flex items-center">
-                        <i class="fas fa-project-diagram text-gradient opacity-80 mr-3 text-2xl hidden md:block"></i> 
-                        <span class="text-gradient">How It Works</span>
+                        <i class="fas fa-project-diagram text-gold opacity-80 mr-3 text-2xl hidden md:block"></i> 
+                        <span class="text-blue-950">How It Works</span>
                     </h2>
                     <div class="decorative-lines flex flex-col w-12 md:w-24 ml-6"><hr><hr><hr></div>
                 </div>
@@ -895,8 +926,8 @@
                 <div class="flex items-center justify-center w-full mb-12" data-aos="fade-down">
                     <div class="decorative-lines flex flex-col w-12 md:w-20 mr-6"><hr><hr><hr></div>
                     <h2 class="font-serif italic text-3xl md:text-4xl font-bold tracking-wide text-center flex items-center">
-                        <i class="fas fa-trophy text-gradient mr-3 text-2xl hidden md:block"></i> 
-                        <span class="text-gradient">Successful Outcomes</span>
+                        <i class="fas fa-trophy text-gold mr-3 text-2xl hidden md:block"></i> 
+                        <span class="text-blue-950">Successful Outcomes</span>
                     </h2>
                     <div class="decorative-lines flex flex-col w-12 md:w-20 ml-6"><hr><hr><hr></div>
                 </div>
@@ -940,8 +971,8 @@
                 <div class="flex items-center justify-center w-full mb-8" data-aos="fade-down">
                     <div class="decorative-lines flex flex-col w-8 md:w-16 mr-6"><hr><hr><hr></div>
                     <h2 class="font-serif italic text-3xl md:text-4xl font-bold tracking-wide text-center flex items-center">
-                        <i class="fas fa-book-open text-gradient opacity-80 mr-3 text-2xl hidden md:block"></i> 
-                        <span class="text-gradient">Blog & Legal Q&A</span>
+                        <i class="fas fa-book-open text-gold opacity-80 mr-3 text-2xl hidden md:block"></i> 
+                        <span class="text-blue-950">Blog & Legal Q&A</span>
                     </h2>
                     <div class="decorative-lines flex flex-col w-8 md:w-16 ml-6"><hr><hr><hr></div>
                 </div>
@@ -1237,8 +1268,8 @@
                 <div class="flex items-center justify-center w-full mb-12" data-aos="fade-down">
                     <div class="decorative-lines flex flex-col w-12 md:w-20 mr-6"><hr><hr><hr></div>
                     <h2 class="font-serif italic text-3xl md:text-4xl font-bold tracking-wide text-center flex items-center">
-                        <i class="fas fa-question-circle text-gradient mr-3 text-2xl hidden md:block"></i> 
-                        <span class="text-gradient">Frequently Asked Questions</span>
+                        <i class="fas fa-question-circle text-gold mr-3 text-2xl hidden md:block"></i> 
+                        <span class="text-blue-950">Frequently Asked Questions</span>
                     </h2>
                     <div class="decorative-lines flex flex-col w-12 md:w-20 ml-6"><hr><hr><hr></div>
                 </div>
@@ -1344,8 +1375,8 @@
                 <div class="w-full lg:w-1/3" data-aos="fade-right" data-aos-duration="1000">
                     <div class="flex items-center justify-start w-full mb-8">
                         <h2 class="font-serif italic text-3xl md:text-4xl font-bold tracking-wide flex items-center">
-                            <i class="far fa-address-card text-gradient mr-3 text-2xl"></i> 
-                            <span class="text-gradient">Contact Us</span>
+                            <i class="far fa-address-card text-gold mr-3 text-2xl"></i> 
+                        <span class="text-blue-950">Contact Us</span>
                         </h2>
                         <div class="decorative-lines flex flex-col w-12 ml-4"><hr><hr><hr></div>
                     </div>
@@ -1392,7 +1423,7 @@
                 <div class="w-full lg:w-2/3 bg-mahogany-card p-8 md:p-10 shadow-2xl rounded border border-mahogany-border" data-aos="fade-left" data-aos-duration="1000">
                     <h3 class="font-serif italic text-2xl mb-6 border-b border-mahogany-border pb-3 flex items-center">
                         <i class="fas fa-paper-plane mr-3 text-lg opacity-80 text-gold"></i> 
-                        <span class="text-gradient">Request Appointment</span>
+                        <span class="text-blue-950">Request Appointment</span>
                     </h3>
                     <form id="contact-form" onsubmit="submitForm(event)" class="space-y-4">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -2422,3 +2453,4 @@
     </div>
 </body>
 </html>
+Practice Area Pillars

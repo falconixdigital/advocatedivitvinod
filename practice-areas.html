@@ -43,9 +43,36 @@
         .bg-mahogany-card {
             background-color: #2c180e;
         }
-        .text-gradient { color: #D4AF37; }
-        .bg-gradient-logo { background-color: #D4AF37; color: #110804; }
-        .decorative-lines hr { margin: 3px 0; border: none; height: 2px; background-color: #D4AF37; opacity: 0.9; }
+        .text-gradient { background: linear-gradient(135deg, #c5a059 0%, #f3e5ab 50%, #c5a059 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent; }
+        .bg-gradient-logo { background: linear-gradient(135deg, #c5a059 0%, #f3e5ab 50%, #c5a059 100%); color: #110804; }
+        .decorative-lines hr { margin: 3px 0; border: none; height: 2px; background: linear-gradient(to right, #c5a059, #f3e5ab, #c5a059); opacity: 0.9; }
+        @keyframes shimmer {
+            0% { transform: translateX(-200%) skewX(-45deg); }
+            100% { transform: translateX(200%) skewX(-45deg); }
+        }
+        .shimmer-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-effect::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 150%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                rgba(255,255,255,0) 0%,
+                rgba(255,255,255,0.03) 45%,
+                rgba(212,175,55,0.15) 50%,
+                rgba(255,255,255,0.03) 55%,
+                rgba(255,255,255,0) 100%
+            );
+            animation: shimmer 6s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 10;
+        }
     </style>
 </head>
 <body class="font-sans text-slate-900 bg-gray-50 antialiased pb-16 sm:pb-0">
@@ -93,7 +120,7 @@
         </div>
     </header>
 
-    <nav class="bg-mahogany-card text-white sticky top-0 z-50 shadow-lg border-b border-mahogany-border/50" itemscope itemtype="https://schema.org/SiteNavigationElement">
+    <nav class="bg-mahogany-card text-white sticky top-0 z-50 shadow-lg border-b border-mahogany-border/50 shimmer-effect" itemscope itemtype="https://schema.org/SiteNavigationElement">
         <div class="px-4 md:px-12 py-3 lg:py-4 flex justify-between items-center">
             <div class="lg:hidden flex items-center">
                 <a href="index.html#home" class="flex items-center font-serif italic font-bold tracking-wide" title="Home - Advocate Divit Vinod">

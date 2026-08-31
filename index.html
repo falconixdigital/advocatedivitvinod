@@ -369,7 +369,7 @@
                 </div>
             </div>
             <div class="flex space-x-3 pt-2 md:pt-0 items-center">
-                <button onclick="toggleLanguage()" class="bg-mahogany-card text-gold border border-gold px-3 py-1.5 rounded text-xs font-bold hover:bg-gold hover:text-blue-950 transition flex items-center shadow-md mr-1 md:mr-3" aria-label="Translate to Hindi or Bengali">
+                <button onclick="toggleLanguage()" class="bg-mahogany-card text-gold border border-gold px-3 py-1.5 rounded text-xs font-bold hover:bg-gold hover:text-blue-950 transition flex items-center shadow-md mr-1 md:mr-3" aria-label="Translate to Hindi">
                     <i class="fas fa-language mr-1.5 text-sm"></i> <span class="lang-text-span">বাংলা / हिन्दी</span>
                 </button>
             </div>
@@ -1634,7 +1634,7 @@
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-language text-gold mr-3 mt-1 shrink-0"></i>
-                            <span><strong>Languages:</strong> Bengali, English, Hindi, Urdu.</span>
+                            <span><strong>Languages:</strong> English, Hindi, Urdu.</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-award text-gold mr-3 mt-1 shrink-0"></i>
@@ -1683,7 +1683,7 @@
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
-                includedLanguages: 'en,bn,hi',
+                includedLanguages: 'en,hi',
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
                 autoDisplay: false
             }, 'google_translate_element');
@@ -1710,11 +1710,6 @@
                     'Client-focused and result-oriented approach.',
                     'Expertise in Criminal, Family, and Property Law.'
                 ],
-                bn: [
-                    'নিবেদিত এবং দক্ষ আইনী অনুশীলনকারী।',
-                    'ক্লায়েন্ট-কেন্দ্রিক এবং ফলাফল-ভিত্তিক পদ্ধতি।',
-                    'ফৌজদারি, পারিবারিক এবং সম্পত্তি আইনে দক্ষতা।'
-                ],
                 hi: [
                     'समर्पित और निपुण कानूनी व्यवसायी।',
                     'ग्राहक-केंद्रित और परिणाम-उन्मुख दृष्टिकोण।',
@@ -1737,14 +1732,13 @@
                 });
             }
 
-            const langs = ['en', 'bn', 'hi'];
-            const cookieMatch = document.cookie.match(/googtrans=\/en\/(en|bn|hi)/);
+            const langs = ['en', 'hi'];
+            const cookieMatch = document.cookie.match(/googtrans=\/en\/(en|hi)/);
             let currentLang = cookieMatch ? cookieMatch[1] : 'en';
             let langIndex = langs.indexOf(currentLang) !== -1 ? langs.indexOf(currentLang) : 0;
 
             function updateLangButton(lang) {
                 let text = 'বাংলা / हिन्दी';
-                if (lang === 'bn') text = 'हिन्दी / English';
                 if (lang === 'hi') text = 'English / বাংলা';
                 document.querySelectorAll('.lang-text-span').forEach(el => el.innerText = text);
             }

@@ -390,7 +390,18 @@
 
             <div class="hidden lg:flex space-x-4 xl:space-x-6 text-xs font-semibold tracking-wider">
                 <a itemprop="url" href="#home" class="text-gold flex items-center group" title="Best Lawyer in Patna"><i class="fas fa-home mr-2 group-hover:text-white transition"></i> <span itemprop="name">HOME</span></a>
-                <a itemprop="url" href="#about" class="hover:text-gold transition flex items-center group" title="Advocate Divit Vinod Profile"><i class="fas fa-user-tie mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> <span itemprop="name">PROFILE</span></a>
+                                <div class="relative group z-[9999]">
+                    <a itemprop="url" href="#about" class="hover:text-gold transition flex items-center group py-2" title="Advocate Divit Vinod Profile">
+                        <i class="fas fa-user-tie mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> 
+                        <span itemprop="name">PROFILE</span>
+                        <i class="fas fa-chevron-down ml-1.5 text-[10px] text-gold opacity-70 group-hover:opacity-100 transition"></i>
+                    </a>
+                    <div class="absolute left-0 top-[100%] w-52 bg-white border border-gray-100 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999] rounded-md overflow-hidden">
+                        <a href="#about" class="block px-4 py-3 text-blue-950 hover:bg-gold hover:text-white font-bold text-xs border-b border-gray-100 transition">Advocate Divit Vinod</a>
+                        <a href="#team" class="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-gold text-xs border-b border-gray-100 transition">Core Team Members</a>
+                        <a href="#testimonials" class="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-gold text-xs transition">Client Testimonials</a>
+                    </div>
+                </div>
                                 <div class="relative group z-[9999]">
                     <a itemprop="url" href="#practice" class="hover:text-gold transition flex items-center group py-2" title="Top Criminal and Divorce Services">
                         <i class="fas fa-briefcase mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> 

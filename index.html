@@ -2389,5 +2389,42 @@
             <i class="fas fa-map-marker-alt mb-1 text-sm"></i> Directions
         </a>
     </div>
+
+    <!-- ScrollSpy Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const topLevelLinks = Array.from(document.querySelectorAll('nav a[href^="#"]'))
+                .filter(a => ['#home', '#about', '#practice', '#outcomes', '#blog', '#youtube', '#faq', '#contact'].includes(a.getAttribute('href')));
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -70% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        topLevelLinks.forEach(link => {
+                            if (link.getAttribute('href') === '#' + id) {
+                                link.classList.add('text-gold');
+                            } else {
+                                link.classList.remove('text-gold');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                if (['home', 'about', 'practice', 'outcomes', 'blog', 'youtube', 'faq', 'contact'].includes(section.getAttribute('id'))) {
+                    observer.observe(section);
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>

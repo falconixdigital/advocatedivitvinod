@@ -442,6 +442,9 @@
                     <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm"></i>
                     <input type="text" id="nav-search-desktop" onkeypress="executeNavSearch(event, this.value)" placeholder="Search articles..." aria-label="Search articles" class="w-40 xl:w-48 bg-mahogany-base border border-mahogany-border text-gray-200 text-xs p-2 pl-9 rounded-full focus:outline-none focus:border-gold transition placeholder-gray-500">
                 </div>
+                <a href="#legal-checker" class="bg-blue-900 border border-blue-700 text-white text-xs px-4 py-2 mr-2 hover:bg-gold hover:text-blue-950 transition flex items-center whitespace-nowrap shadow-sm" title="Free Legal Checker">
+                    <i class="fas fa-clipboard-check mr-2"></i> Eval
+                </a>
                 <a href="#contact" class="border border-gold text-gold text-xs px-4 py-2 hover:bg-gold hover:text-blue-950 transition flex items-center whitespace-nowrap" title="Get Free Legal Consultation">
                     <i class="far fa-calendar-check mr-2"></i> Free Consultation
                 </a>
@@ -464,6 +467,7 @@
             <a href="#home" class="mobile-link text-gold px-4 py-3 border-b border-mahogany-border"><i class="fas fa-home w-6 text-center"></i> HOME</a>
             <a href="#about" class="mobile-link px-4 py-3 border-b border-mahogany-border hover:text-gold"><i class="fas fa-user-tie w-6 text-center"></i> PROFILE</a>
             <a href="#practice" class="mobile-link px-4 py-3 border-b border-mahogany-border hover:text-gold"><i class="fas fa-briefcase w-6 text-center"></i> PRACTICE AREAS</a>
+              <a href="#legal-checker" class="mobile-link px-4 py-3 border-b border-mahogany-border hover:text-gold"><i class="fas fa-clipboard-check w-6 text-center"></i> EVALUATION</a>
             <a href="#outcomes" class="mobile-link px-4 py-3 border-b border-mahogany-border hover:text-gold"><i class="fas fa-gavel w-6 text-center"></i> OUTCOMES</a>
             <a href="#blog" class="mobile-link px-4 py-3 border-b border-mahogany-border hover:text-gold"><i class="fas fa-newspaper w-6 text-center"></i> BLOG & Q&A</a>
             <a href="#youtube" class="mobile-link px-4 py-3 border-b border-mahogany-border hover:text-gold"><i class="fab fa-youtube w-6 text-center"></i> YOUTUBE</a>
@@ -2475,7 +2479,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             const sections = document.querySelectorAll('section[id]');
             const topLevelLinks = Array.from(document.querySelectorAll('nav a[href^="#"]'))
-                .filter(a => ['#home', '#about', '#practice', '#outcomes', '#blog', '#youtube', '#faq', '#contact'].includes(a.getAttribute('href')));
+                .filter(a => ['#home', '#about', '#practice', '#legal-checker', '#outcomes', '#blog', '#youtube', '#faq', '#contact'].includes(a.getAttribute('href')));
 
             const observerOptions = {
                 root: null,
@@ -2505,7 +2509,7 @@
             }, observerOptions);
 
             sections.forEach(section => {
-                if (['home', 'about', 'practice', 'outcomes', 'blog', 'youtube', 'faq', 'contact'].includes(section.getAttribute('id'))) {
+                if (['home', 'about', 'practice', 'legal-checker', 'outcomes', 'blog', 'youtube', 'faq', 'contact'].includes(section.getAttribute('id'))) {
                     observer.observe(section);
                 }
             });

@@ -2407,6 +2407,12 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const id = entry.target.getAttribute('id');
+                        
+                        // Update the URL hash automatically without jumping
+                        if (history.replaceState) {
+                            history.replaceState(null, null, '#' + id);
+                        }
+
                         topLevelLinks.forEach(link => {
                             if (link.getAttribute('href') === '#' + id) {
                                 link.classList.add('text-gold');

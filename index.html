@@ -2546,7 +2546,7 @@
         let currentQuizType = '';
         let currentQuestionIndex = 0;
 
-        function startQuiz(type) {
+        function startQuiz(type) { if (document.activeElement) document.activeElement.blur();
             currentQuizType = type;
             currentQuestionIndex = 0;
             document.getElementById('quiz-step-1').classList.add('hidden');
@@ -2574,7 +2574,7 @@
             }
         }
 
-        function nextQuestion(answer) {
+        function nextQuestion(answer) { if (document.activeElement) document.activeElement.blur();
             currentQuestionIndex++;
             if (currentQuestionIndex < 3) {
                 updateDots();
@@ -2595,7 +2595,7 @@
             }
         }
 
-        function resetQuiz() {
+        function resetQuiz() { if (document.activeElement) document.activeElement.blur();
             document.getElementById('quiz-step-2').classList.add('hidden');
             document.getElementById('quiz-step-2').classList.remove('flex');
             document.getElementById('quiz-step-3').classList.add('hidden');

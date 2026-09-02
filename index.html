@@ -839,14 +839,14 @@
                     <div id="quiz-step-1" class="transition-all duration-500">
                         <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-8 text-center pb-4">What is the nature of your legal issue?</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <button onclick="startQuiz('bail')" class="p-6 md:p-8 bg-white border-2 border-blue-100 rounded-2xl hover:border-blue-400 hover:shadow-[0_10px_30px_rgba(59,130,246,0.15)] transition-all duration-300 group flex flex-col items-center text-center cursor-pointer transform hover:-translate-y-1 relative overflow-hidden">
+                            <button onclick="startQuiz('bail')" class="p-6 md:p-8 bg-white border-2 border-blue-100 rounded-2xl md:hover:border-blue-400 md:hover:shadow-[0_10px_30px_rgba(59,130,246,0.15)] transition-all duration-300 group flex flex-col items-center text-center cursor-pointer transform md:hover:-translate-y-1 active:scale-95 active:border-blue-500 active:bg-blue-50 relative overflow-hidden">
                                 <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-cyan-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                 <div class="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform relative z-10">
                                     <i class="fas fa-handcuffs text-3xl md:text-4xl text-blue-500 shadow-inner"></i>
                                 </div>
                                 <span class="font-extrabold text-slate-700 text-base md:text-lg tracking-wide relative z-10">Anticipatory / Regular Bail</span>
                             </button>
-                            <button onclick="startQuiz('divorce')" class="p-6 md:p-8 bg-white border-2 border-pink-100 rounded-2xl hover:border-pink-400 hover:shadow-[0_10px_30px_rgba(236,72,153,0.15)] transition-all duration-300 group flex flex-col items-center text-center cursor-pointer transform hover:-translate-y-1 relative overflow-hidden">
+                            <button onclick="startQuiz('divorce')" class="p-6 md:p-8 bg-white border-2 border-pink-100 rounded-2xl md:hover:border-pink-400 md:hover:shadow-[0_10px_30px_rgba(236,72,153,0.15)] transition-all duration-300 group flex flex-col items-center text-center cursor-pointer transform md:hover:-translate-y-1 active:scale-95 active:border-pink-500 active:bg-pink-50 relative overflow-hidden">
                                 <div class="absolute inset-0 bg-gradient-to-br from-pink-50 to-rose-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                 <div class="w-20 h-20 rounded-full bg-pink-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform relative z-10">
                                     <i class="fas fa-heart-crack text-3xl md:text-4xl text-pink-500 shadow-inner"></i>
@@ -871,10 +871,10 @@
                         <h3 id="quiz-question-text" class="text-xl md:text-3xl font-extrabold text-slate-800 mb-12 text-center flex-grow flex items-center px-2 md:px-8 leading-tight"></h3>
                         
                         <div class="flex flex-col sm:flex-row gap-4 w-full justify-center pb-4">
-                            <button onclick="nextQuestion(true)" class="flex-1 w-full sm:max-w-[220px] py-4 md:py-5 px-6 bg-emerald-50 border-2 border-emerald-200 text-emerald-700 font-extrabold text-lg rounded-2xl shadow-sm hover:bg-emerald-500 hover:border-emerald-500 hover:text-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                            <button onclick="nextQuestion(true)" class="flex-1 w-full sm:max-w-[220px] py-4 md:py-5 px-6 bg-emerald-50 border-2 border-emerald-200 text-emerald-700 font-extrabold text-lg rounded-2xl shadow-sm md:hover:bg-emerald-500 md:hover:border-emerald-500 md:hover:text-white transition-all duration-200 transform md:hover:-translate-y-1 md:hover:shadow-lg active:bg-emerald-600 active:text-white active:border-emerald-600 active:scale-95 active:shadow-inner">
                                 <i class="fas fa-check mr-2"></i> YES
                             </button>
-                            <button onclick="nextQuestion(false)" class="flex-1 w-full sm:max-w-[220px] py-4 md:py-5 px-6 bg-rose-50 border-2 border-rose-200 text-rose-700 font-extrabold text-lg rounded-2xl shadow-sm hover:bg-rose-500 hover:border-rose-500 hover:text-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                            <button onclick="nextQuestion(false)" class="flex-1 w-full sm:max-w-[220px] py-4 md:py-5 px-6 bg-rose-50 border-2 border-rose-200 text-rose-700 font-extrabold text-lg rounded-2xl shadow-sm md:hover:bg-rose-500 md:hover:border-rose-500 md:hover:text-white transition-all duration-200 transform md:hover:-translate-y-1 md:hover:shadow-lg active:bg-rose-600 active:text-white active:border-rose-600 active:scale-95 active:shadow-inner">
                                 <i class="fas fa-times mr-2"></i> NO
                             </button>
                         </div>

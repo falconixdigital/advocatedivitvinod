@@ -11,7 +11,7 @@
     <!-- Primary Homepage with Image and Video SEO -->
     <url>
         <loc>https://advocatedivitvinod.com/</loc>
-        <lastmod>2026-08-31</lastmod>
+        <lastmod>2026-09-05</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         
@@ -21,12 +21,8 @@
             <image:title>Advocate Divit Vinod - Top Criminal Lawyer in Patna</image:title>
             <image:caption>Professional portrait of Advocate Divit Vinod, Lead Strategist and Founder at Patna High Court</image:caption>
         </image:image>
-        <image:image><image:loc>https://advocatedivitvinod.com/slide-1.jpg</image:loc><image:title>Top criminal defense lawyer in Patna working on anticipatory bail</image:title></image:image>
-        <image:image><image:loc>https://advocatedivitvinod.com/slide-2.jpg</image:loc><image:title>Best Divorce Advocate in Patna Court providing legal consultation for family dispute</image:title></image:image>
-        <image:image><image:loc>https://advocatedivitvinod.com/slide-3.jpg</image:loc><image:title>Experienced property advocate in Patna verifying land registration documents</image:title></image:image>
-        <image:image><image:loc>https://advocatedivitvinod.com/slide-4.jpg</image:loc><image:title>Advocate Divit Vinod at Patna High Court Legal Practice</image:title></image:image>
+        <image:image><image:loc>https://advocatedivitvinod.com/landing-page-bg-photo.jpg</image:loc><image:title>Advocate Divit Vinod at Patna High Court Background</image:title></image:image>
         <image:image><image:loc>https://advocatedivitvinod.com/25+years.jpg</image:loc><image:title>Advocate Divit Vinod 25+ Years Experience</image:title></image:image>
-        <image:image><image:loc>https://advocatedivitvinod.com/5-star-badge.png</image:loc><image:title>5 Star Premium Rating Badge</image:title></image:image>
         <image:image><image:loc>https://advocatedivitvinod.com/high-court.jpg</image:loc><image:title>High Court Practice Area</image:title></image:image>
         <image:image><image:loc>https://advocatedivitvinod.com/corporate.jpg</image:loc><image:title>Corporate Law Practice Area</image:title></image:image>
         <image:image><image:loc>https://advocatedivitvinod.com/real-estate.webp</image:loc><image:title>Real Estate Law Practice Area</image:title></image:image>
@@ -37,18 +33,22 @@
         <image:image><image:loc>https://advocatedivitvinod.com/banking-law-article.jpeg</image:loc><image:title>Banking Lawyer Patna</image:title></image:image>
         <image:image><image:loc>https://advocatedivitvinod.com/family-law-article.jpg</image:loc><image:title>Divorce Procedure West Bengal</image:title></image:image>
         <image:image><image:loc>https://advocatedivitvinod.com/real-estate-article.jpg</image:loc><image:title>Property Dispute Legal Meeting</image:title></image:image>
+        
+        <!-- Team Images -->
         <image:image><image:loc>https://advocatedivitvinod.com/ankit-singh.jpeg</image:loc><image:title>Adv. Ankit Kr. Singh - Head of Economic Offences</image:title></image:image>
         <image:image><image:loc>https://advocatedivitvinod.com/manoj-ambastha.jpeg</image:loc><image:title>Shri Manoj Kr. Ambastha - Senior Govt. Lawyer</image:title></image:image>
         <image:image><image:loc>https://advocatedivitvinod.com/saloni-sinha.jpeg</image:loc><image:title>Adv. Saloni Sinha - Head of Compliance</image:title></image:image>
-        <image:image><image:loc>https://advocatedivitvinod.com/kamlesh.jpeg</image:loc><image:title>Adv. Kamlesh Kumar - Matrimonial Law Specialist</image:title></image:image>
+        <image:image><image:loc>https://advocatedivitvinod.com/kamlesh-new.jpeg</image:loc><image:title>Adv. Kamlesh Kumar - Matrimonial Law Specialist</image:title></image:image>
+        <image:image><image:loc>https://advocatedivitvinod.com/Shivendra.jpeg</image:loc><image:title>Shri Shivendra Kr. Sinha - Senior Criminal Lawyer</image:title></image:image>
+        <image:image><image:loc>https://advocatedivitvinod.com/Siddharth-krishna.jpeg</image:loc><image:title>Adv. Siddharth Krishna - Civil &amp; Property Specialist</image:title></image:image>
         
         <!-- Videos Embedded from YouTube -->
         <video:video>
-            <video:thumbnail_loc>https://img.youtube.com/vi/GnkUf9Clq_s/hqdefault.jpg</video:thumbnail_loc>
+            <video:thumbnail_loc>https://img.youtube.com/vi/i4JwdB_g_Pk/hqdefault.jpg</video:thumbnail_loc>
             <video:title>Advocate Divit Vinod Introduction Video</video:title>
             <video:description>Advocate Divit Vinod Introduction Video handling advocate discussing legal case</video:description>
-            <video:content_loc>https://www.youtube.com/embed/GnkUf9Clq_s</video:content_loc>
-            <video:publication_date>2023-01-01T00:00:00+00:00</video:publication_date>
+            <video:content_loc>https://www.youtube.com/embed/i4JwdB_g_Pk</video:content_loc>
+            <video:publication_date>2026-09-02T00:00:00+00:00</video:publication_date>
         </video:video>
         <video:video>
             <video:thumbnail_loc>https://img.youtube.com/vi/d-XFUNTTV8s/hqdefault.jpg</video:thumbnail_loc>
@@ -78,14 +78,6 @@
             <video:content_loc>https://www.youtube.com/embed/Pw_uvyT8YjE</video:content_loc>
             <video:publication_date>2023-01-01T00:00:00+00:00</video:publication_date>
         </video:video>
-    </url>
-
-    <!-- Practice Areas Page -->
-    <url>
-        <loc>https://advocatedivitvinod.com/practice-areas.html</loc>
-        <lastmod>2026-08-31</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
     </url>
 
 </urlset>

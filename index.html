@@ -536,11 +536,7 @@
                         <img src="https://content.jdmagicbox.com/comp/patna/q2/0612px612.x612.170901173317.b9q2/catalogue/bihar-bar-council-bhawan-vidyut-parisad-patna-lawyers-o3vuqp1oh4.jpg" alt="Bar Council Badge" class="w-6 h-6 md:w-8 md:h-8 rounded-full object-cover mr-2 border border-gold/50 shadow-md bg-white" loading="lazy">
                         <span class="font-serif tracking-wide text-[11px] md:text-sm">Registered <strong class="text-white">Bar Council</strong></span>
                     </div>
-                    <div class="hidden md:block w-px h-4 bg-white/20"></div>
-                    <div class="flex items-center text-gray-200">
-                        <img src="./5-star-badge.png" alt="5 Star Premium Badge" class="w-6 h-6 md:w-8 md:h-8 rounded-full object-cover mr-2 border border-gold/50 shadow-md bg-white" loading="lazy">
-                        <span class="font-serif tracking-wide text-[11px] md:text-sm"><strong class="text-white">5-Star</strong> Premium Legal</span>
-                    </div>
+                    
                 </div>
             </div>
         </section>
@@ -2406,6 +2402,36 @@
             });
         }
     </script>
+    
+    <!-- Disclaimer Popup -->
+    <div id="disclaimer-modal" class="fixed inset-0 z-[100000] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-500">
+        <div class="bg-white border border-gray-200 rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col relative" onclick="event.stopPropagation()">
+            <div class="bg-blue-950 p-4 border-b border-gold flex items-center justify-between shrink-0">
+                <h2 class="text-xl font-serif font-bold text-white flex items-center"><i class="fas fa-balance-scale text-gold mr-2"></i> Legal Disclaimer</h2>
+            </div>
+            
+            <div class="p-6 md:p-8 overflow-y-auto text-sm text-slate-700 space-y-4 font-sans leading-relaxed flex-1">
+                <p>The Bar Council of India rules prohibit Advocates from advertising or soliciting work in any form or manner. By accessing the Advocate Divit Vinod website (advocatedivitvinod.com), the user acknowledges and agrees to the following:</p>
+                
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>This website and its contents are for informational purposes only and are not in the nature of solicitation, advertisement, or inducement by Advocate Divit Vinod or its members. Any information provided here does not constitute legal advice and should not be relied upon as such. Accessing this website does not create an attorney-client relationship between the user and Advocate Divit Vinod.</li>
+                    <li>The user confirms that they have voluntarily sought information about Advocate Divit Vinod for their own use and acknowledges that there has been no solicitation, advertisement, or inducement from Advocate Divit Vinod or its members.</li>
+                    <li>This website may collect personal information (e.g., names, contact details, academic qualifications, and professional details) for purposes such as assessing internship and job opportunities, addressing inquiries, providing information about the firm’s services, and enhancing client service and engagement. By sharing information, the user consents to the collection, storage, and processing of their data for these purposes in compliance with applicable data protection laws.</li>
+                    <li>Users submitting information confirm that it is accurate, complete, and provided voluntarily, and that they have attained the age of majority as per the laws of their jurisdiction.</li>
+                    <li>Advocate Divit Vinod does not request payments from candidates for recruitment opportunities. Any solicitation of this nature is fraudulent and should be ignored.</li>
+                    <li>All information and content on this website are the exclusive intellectual property of Advocate Divit Vinod. Unauthorized use, reproduction, or distribution is strictly prohibited.</li>
+                    <li>Advocate Divit Vinod takes no responsibility or liability for consequences arising from actions taken based on the information or content available on this website.</li>
+                </ul>
+                <p class="font-bold text-blue-950 mt-4">By accessing this website, the user agrees to these terms and conditions.</p>
+            </div>
+            
+            <div class="bg-gray-50 p-4 border-t border-gray-200 flex justify-end space-x-3 shrink-0">
+                <button onclick="declineDisclaimer()" class="px-5 py-2 border border-gray-300 text-slate-700 bg-white hover:bg-gray-100 rounded text-sm font-bold transition">Decline</button>
+                <button onclick="acceptDisclaimer()" class="px-5 py-2 bg-blue-950 text-white hover:bg-gold hover:text-blue-950 rounded text-sm font-bold transition shadow-md">I Accept & Agree</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Mobile Floating Action Bar -->
     <div class="md:hidden fixed bottom-4 left-4 right-4 z-[100] flex justify-between gap-2 p-1.5 backdrop-blur-lg bg-mahogany-base/90 border border-mahogany-border rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.7)] pointer-events-auto">
         <a href="tel:+919918324120" class="flex-1 bg-mahogany-card text-gold text-[8px] font-bold uppercase tracking-wider py-2 rounded-lg flex flex-col items-center justify-center border border-gold/30 shadow-md active:scale-95 transition" itemprop="telephone">
@@ -2460,6 +2486,45 @@
             });
         });
     </script>
-    </body>
+    
+    <!-- Disclaimer Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hasAccepted = sessionStorage.getItem('disclaimerAccepted');
+            if (!hasAccepted) {
+                setTimeout(() => {
+                    const modal = document.getElementById('disclaimer-modal');
+                    if(modal) {
+                        modal.classList.remove('hidden');
+                        modal.classList.add('flex');
+                        // Small delay to trigger transition
+                        setTimeout(() => {
+                            modal.classList.remove('opacity-0');
+                            modal.classList.add('opacity-100');
+                        }, 50);
+                        // Prevent scrolling on background
+                        document.body.style.overflow = 'hidden';
+                    }
+                }, 3000); // 3 seconds delay
+            }
+        });
+
+        function acceptDisclaimer() {
+            sessionStorage.setItem('disclaimerAccepted', 'true');
+            const modal = document.getElementById('disclaimer-modal');
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = 'auto'; // Restore scrolling
+            }, 500); // Match transition duration
+        }
+
+        function declineDisclaimer() {
+            window.location.href = 'https://www.google.com';
+        }
+    </script>
+</body>
 
 </html>

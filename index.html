@@ -419,7 +419,7 @@
                     </div>
                 </div>
                 <a itemprop="url" href="#how-we-work" class="hover:text-gold transition flex items-center group" title="How We Work"><i class="fas fa-project-diagram mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> <span itemprop="name">PROCESS</span></a>
-                <a itemprop="url" href="#blog" class="hover:text-gold transition flex items-center group" title="Legal Blog and Q&A"><i class="fas fa-newspaper mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> <span itemprop="name">LEGAL INSIGHTS</span></a>
+                <a itemprop="url" href="#blog" class="hover:text-gold transition flex items-center group" title="Legal Blog and Q&A"><i class="fas fa-newspaper mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> <span itemprop="name">INSIGHTS</span></a>
                 <div class="relative group z-[9999]">
                     <a itemprop="url" href="#faq" class="hover:text-gold transition flex items-center group py-2" title="Frequently Asked Legal Questions">
                         <i class="fas fa-circle-question mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> 
@@ -471,44 +471,60 @@
     </nav>
 
     <main>
-        <section id="home" class="min-h-[520px] h-auto md:h-[550px] py-12 md:py-0 flex items-center justify-center relative border-b border-mahogany-border overflow-hidden">
+        <section id="home" class="h-[100svh] min-h-[600px] flex flex-col items-center justify-center relative overflow-hidden">
+            <!-- Background Image -->
             <div class="absolute inset-0 w-full h-full">
-                <div class="absolute inset-0 bg-mahogany-deep/70 z-10"></div>
+                <!-- Overlay with gradient to make text pop and match the dark vibe -->
+                <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/90 z-10"></div>
                 <img src="landing-page-bg-photo.jpg" alt="Advocate Divit Vinod at Patna High Court" class="w-full h-full object-cover animate-kenburns" fetchpriority="high">
             </div>
 
-            <div class="text-center text-white p-8 md:p-12 max-w-4xl relative z-20 pointer-events-none shadow-2xl backdrop-blur-sm bg-black/20 border border-white/20 rounded-2xl mx-4 mb-12 md:mb-16">
-                <h1 class="font-serif italic font-bold text-3xl sm:text-4xl md:text-6xl mb-4 md:mb-6 tracking-wide leading-tight drop-shadow-lg" data-aos="fade-down" data-aos-duration="1000">
-                    <span class="text-gradient">Advocate Divit Vinod</span> <br/> 
-                    <span class="text-lg sm:text-xl md:text-3xl text-white mt-2 md:mt-3 block font-sans not-italic min-h-[4rem] sm:min-h-[4.5rem] md:min-h-[3rem]">at Patna High Court | <span id="typewriter-text" class="text-gold font-bold">Lead Strategist & Founder</span><span class="animate-[pulse_1s_ease-in-out_infinite] font-bold text-gold">|</span></span>
+            <!-- Main Content Container -->
+            <div class="relative z-20 w-full max-w-6xl mx-auto px-4 text-center flex flex-col items-center mt-12 md:mt-0 pt-16 md:pt-0">
+                
+                <h1 class="font-serif font-bold text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] text-white mb-4 sm:mb-6 uppercase tracking-wider drop-shadow-2xl leading-[1.1]" data-aos="fade-down" data-aos-duration="1000" style="text-shadow: 2px 4px 10px rgba(0,0,0,0.5);">
+                    Legacy of Trust,<br/>Pursuit of Justice.
                 </h1>
                 
-                <div class="mb-6 md:mb-8 min-h-[3rem] md:min-h-[4rem] flex justify-center items-center" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-                    <p class="text-sm md:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed drop-shadow-md font-medium">
-                        Welcome to the online chambers of Advocate Divit Vinod, the driving strategic force behind Patliputra Law & Retainers.
-                    </p>
-                </div>
+                <p class="font-sans text-xs sm:text-sm md:text-base lg:text-lg text-gray-200 uppercase tracking-[0.15em] sm:tracking-[0.2em] mb-10 sm:mb-12 max-w-3xl drop-shadow-md font-medium" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                    Patna's premier legal firm, guiding you with integrity and expertise.
+                </p>
                 
-                <div class="flex flex-col sm:flex-row justify-center gap-3 md:gap-4 pointer-events-auto mb-6 md:mb-8" data-aos="zoom-in" data-aos-delay="600" data-aos-duration="800">
-                    <a href="#contact" class="inline-block bg-gradient-logo font-bold text-xs md:text-sm tracking-wider px-8 py-3.5 hover:opacity-90 transition shadow-lg flex justify-center items-center text-blue-950" title="Book a Strategic Consultation with the Firm Head">
-                        <i class="fas fa-calendar-check mr-2 text-lg"></i> BOOK A CONSULTATION
+                <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-6 sm:px-0" data-aos="zoom-in" data-aos-delay="600" data-aos-duration="800">
+                    <a href="#contact" class="bg-[#B99252] text-white hover:bg-[#a17e43] transition font-sans font-bold text-xs sm:text-sm tracking-widest uppercase px-6 sm:px-8 py-3.5 sm:py-4 text-center rounded-[3px] shadow-lg">
+                        Schedule a Consultation
+                    </a>
+                    <a href="#practice" class="bg-black/30 backdrop-blur-sm border border-white text-white hover:bg-white hover:text-black transition font-sans font-bold text-xs sm:text-sm tracking-widest uppercase px-6 sm:px-8 py-3.5 sm:py-4 text-center rounded-[3px] shadow-lg">
+                        Explore Practice Areas
                     </a>
                 </div>
+            </div>
 
-                <!-- Integrated Trust Badges -->
-                <div class="pt-5 border-t border-white/10 flex flex-col md:flex-row justify-center md:justify-between items-center gap-4 md:gap-0 w-full" data-aos="fade-up" data-aos-delay="700">
-                    <div class="flex items-center text-gray-200">
-                        <img src="https://m.media-amazon.com/images/I/61TunQskKgL._AC_UY1100_.jpg" alt="Advocate Badge" class="w-6 h-6 md:w-8 md:h-8 rounded-full object-cover mr-2 border border-gold/50 shadow-md" loading="lazy">
-                        <span class="font-serif tracking-wide text-[11px] md:text-sm">Verified <strong class="text-white">Patna High Court</strong></span>
-                    </div>
-                    <div class="hidden md:block w-px h-4 bg-white/20"></div>
-                    <div class="flex items-center text-gray-200">
-                        <img src="https://content.jdmagicbox.com/comp/patna/q2/0612px612.x612.170901173317.b9q2/catalogue/bihar-bar-council-bhawan-vidyut-parisad-patna-lawyers-o3vuqp1oh4.jpg" alt="Bar Council Badge" class="w-6 h-6 md:w-8 md:h-8 rounded-full object-cover mr-2 border border-gold/50 shadow-md bg-white" loading="lazy">
-                        <span class="font-serif tracking-wide text-[11px] md:text-sm">Registered <strong class="text-white">Bar Council</strong></span>
-                    </div>
+            <!-- Bottom Right Profile Widget -->
+            <div class="absolute bottom-6 sm:bottom-10 right-4 sm:right-10 z-30 flex bg-[#162130]/95 backdrop-blur-md border border-white/10 rounded-lg shadow-2xl p-4 sm:p-5 w-[280px] sm:w-[320px] items-center gap-4 sm:gap-5 transition duration-300 hover:-translate-y-1 hover:shadow-gold/20" data-aos="fade-left" data-aos-delay="1000">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 rounded shadow-inner overflow-hidden flex-shrink-0 border border-white/20">
+                    <img src="https://i.ibb.co/xKXnHtwF/Screenshot-2026-08-30-201132.png" alt="Divit Vinod" class="w-full h-full object-cover">
+                </div>
+                <div class="text-left text-white flex-1 overflow-hidden">
+                    <h3 class="font-sans font-bold text-sm sm:text-base tracking-wider uppercase mb-0.5 sm:mb-1 truncate">Divit Vinod</h3>
+                    <p class="text-[9px] sm:text-[10px] text-gray-400 uppercase tracking-widest mb-2 sm:mb-3 font-semibold">For Emergencies</p>
                     
+                    <div class="flex flex-col gap-1.5 sm:gap-2 text-[10px] sm:text-[11px] font-sans">
+                        <a href="tel:+919918324120" class="flex items-center text-gray-200 hover:text-[#B99252] transition">
+                            <i class="fas fa-phone-alt w-4 sm:w-5"></i> +91 99183 24120
+                        </a>
+                        <a href="mailto:mail@advocatedivitvinod.com" class="flex items-center text-gray-200 hover:text-[#B99252] transition truncate">
+                            <i class="fas fa-envelope w-4 sm:w-5"></i> mail@advocatedivitvinod.com
+                        </a>
+                        <div class="flex items-center gap-3 mt-1 text-gray-400">
+                            <a href="#" class="hover:text-white transition"><i class="fab fa-linkedin-in text-sm"></i></a>
+                            <a href="#" class="hover:text-white transition"><i class="fab fa-twitter text-sm"></i></a>
+                            <a href="mailto:mail@advocatedivitvinod.com" class="hover:text-white transition"><i class="fas fa-envelope text-sm"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
+            
         </section>
 
         <section id="about" class="py-16 md:py-24 px-4 md:px-12 bg-white relative overflow-hidden">

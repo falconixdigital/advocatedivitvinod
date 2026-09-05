@@ -472,37 +472,9 @@
 
     <main>
         <section id="home" class="min-h-[520px] h-auto md:h-[550px] py-12 md:py-0 flex items-center justify-center relative border-b border-mahogany-border overflow-hidden">
-            <div id="hero-slider" class="absolute inset-0 flex transition-transform duration-700 ease-in-out w-full h-full">
-                <div class="min-w-full h-full relative flex-shrink-0">
-                    <div class="absolute inset-0 bg-mahogany-deep/70 z-10"></div>
-                    <img src="slide-1.jpg" alt="Top criminal defense lawyer in Patna working on anticipatory bail" title="Criminal Lawyer Office Patna" class="w-full h-full object-cover" width="1920" height="1080" fetchpriority="high" >
-                </div>
-                <div class="min-w-full h-full relative flex-shrink-0">
-                    <div class="absolute inset-0 bg-mahogany-deep/70 z-10"></div>
-                    <img src="slide-2.jpg" alt="Best Divorce Advocate in Patna Court providing legal consultation for family dispute" title="Divorce and Family Law Practice Patna" class="w-full h-full object-cover" width="1920" height="1080" loading="lazy">
-                </div>
-                <div class="min-w-full h-full relative flex-shrink-0">
-                    <div class="absolute inset-0 bg-mahogany-deep/70 z-10"></div>
-                    <img src="slide-3.jpg" alt="Experienced property advocate in Patna verifying land registration documents" title="Real Estate Legal Office Patna" class="w-full h-full object-cover" width="1920" height="1080" loading="lazy">
-                </div>
-                <div class="min-w-full h-full relative flex-shrink-0">
-                    <div class="absolute inset-0 bg-mahogany-deep/70 z-10"></div>
-                    <img src="slide-4.jpg" alt="Advocate Divit Vinod at Patna High Court" title="Patna High Court Legal Practice" class="w-full h-full object-cover" width="1920" height="1080" loading="lazy">
-                </div>
-            </div>
-
-            <button onclick="prevSlide()" class="absolute left-4 md:left-8 z-20 text-white/50 hover:text-gold text-3xl md:text-4xl transition focus:outline-none" aria-label="Previous Slide">
-                <i class="fas fa-chevron-circle-left"></i>
-            </button>
-            <button onclick="nextSlide()" class="absolute right-4 md:right-8 z-20 text-white/50 hover:text-gold text-3xl md:text-4xl transition focus:outline-none" aria-label="Next Slide">
-                <i class="fas fa-chevron-circle-right"></i>
-            </button>
-
-            <div class="absolute bottom-4 md:bottom-8 z-20 flex space-x-2" id="slider-indicators">
-                <button onclick="goToSlide(0)" class="w-8 h-1 bg-gold transition indicator-dot focus:outline-none" aria-label="Slide 1"></button>
-                <button onclick="goToSlide(1)" class="w-8 h-1 bg-white/50 transition indicator-dot focus:outline-none" aria-label="Slide 2"></button>
-                <button onclick="goToSlide(2)" class="w-8 h-1 bg-white/50 transition indicator-dot focus:outline-none" aria-label="Slide 3"></button>
-                <button onclick="goToSlide(3)" class="w-8 h-1 bg-white/50 transition indicator-dot focus:outline-none" aria-label="Slide 4"></button>
+            <div class="absolute inset-0 w-full h-full">
+                <div class="absolute inset-0 bg-mahogany-deep/70 z-10"></div>
+                <img src="landing-page-bg-photo.jpg" alt="Advocate Divit Vinod at Patna High Court" class="w-full h-full object-cover animate-kenburns" fetchpriority="high">
             </div>
 
             <div class="text-center text-white p-8 md:p-12 max-w-4xl relative z-20 pointer-events-none shadow-2xl backdrop-blur-sm bg-black/20 border border-white/20 rounded-2xl mx-4 mb-12 md:mb-16">
@@ -1728,7 +1700,6 @@
 
             updateLangButton(currentLang);
             initTyped(currentLang);
-            resetSlideInterval();
 
             const menuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -2212,82 +2183,7 @@
             });
         }
 
-        let currentSlide = 0;
-        const totalSlides = 4;
-        let slideInterval;
-
-        window.prevSlide = function() {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            updateSlider();
-            resetSlideInterval();
-        };
-
-        window.nextSlide = function() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateSlider();
-            resetSlideInterval();
-        };
-
-        window.goToSlide = function(index) {
-            currentSlide = index;
-            updateSlider();
-            resetSlideInterval();
-        };
-
-        function updateSlider() {
-            const slider = document.getElementById('hero-slider');
-            if(slider) {
-                slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-                const images = slider.querySelectorAll('img');
-                images.forEach((img, idx) => {
-                    if (idx === currentSlide) {
-                        img.classList.add('animate-kenburns');
-                    } else {
-                        img.classList.remove('animate-kenburns');
-                    }
-                });
-            }
-            
-            document.querySelectorAll('.indicator-dot').forEach((dot, idx) => {
-                if (idx === currentSlide) {
-                    dot.classList.remove('bg-white/50');
-                    dot.classList.add('bg-gold');
-                } else {
-                    dot.classList.remove('bg-gold');
-                    dot.classList.add('bg-white/50');
-                }
-            });
-        }
-
-        function resetSlideInterval() {
-            if (slideInterval) clearInterval(slideInterval);
-            slideInterval = setInterval(window.nextSlide, 5000); 
-        }
-
-        const heroSlider = document.getElementById('home');
-        if(heroSlider) {
-            let heroStartX = 0;
-            let heroEndX = 0;
-            
-            heroSlider.addEventListener('touchstart', e => {
-                heroStartX = e.changedTouches[0].screenX;
-            }, {passive: true});
-
-            heroSlider.addEventListener('touchend', e => {
-                heroEndX = e.changedTouches[0].screenX;
-                handleHeroSwipe();
-            }, {passive: true});
-
-            function handleHeroSwipe() {
-                const threshold = 50; 
-                if (heroEndX < heroStartX - threshold) {
-                    window.nextSlide(); 
-                }
-                if (heroEndX > heroStartX + threshold) {
-                    window.prevSlide(); 
-                }
-            }
-        }
+        
 
         // Typewriter Effect
         const typewriterElement = document.getElementById('typewriter-text');

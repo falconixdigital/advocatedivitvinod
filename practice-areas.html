@@ -19,15 +19,15 @@
             theme: {
                 extend: {
                     colors: {
-                        gold: '#e57b15', 
-                        dark: '#1a1a1a',
-                        card: '#0a0a0a',
-                        beige: '#b59d81',
+                        gold: '#B99252',
+                        dark: '#111827',
+                        card: '#ffffff',
+                        cream: '#F8F6F0',
                         navy: {
-                            deep: '#110804',
-                            base: '#1f110a',
-                            card: '#2c180e',
-                            border: '#3d2315'
+                            deep: '#0F172A',
+                            base: '#1E293B',
+                            card: '#334155',
+                            border: '#475569'
                         }
                     }
                 }
@@ -35,17 +35,101 @@
         }
     </script>
     <style>
+        a, button, input, select, textarea, [onclick], .cursor-pointer {
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+        [onclick], [onclick] * { cursor: pointer; }
         .bg-navy-base {
             background-color: #0F172A;
             background-image: 
-                radial-gradient(circle at center, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 0.9) 100%);
+                radial-gradient(circle at center, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 0.9) 100%),
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
         }
         .bg-navy-card {
             background-color: #1E293B;
+            background-image: 
+                linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0.9) 100%),
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
         }
-        .text-gradient { background: linear-gradient(135deg, #c5a059 0%, #f3e5ab 50%, #c5a059 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent; }
-        .bg-gradient-logo { background: linear-gradient(135deg, #c5a059 0%, #f3e5ab 50%, #c5a059 100%); color: #110804; }
-        .decorative-lines hr { margin: 3px 0; border: none; height: 2px; background: linear-gradient(to right, #c5a059, #f3e5ab, #c5a059); opacity: 0.9; }
+        .text-gradient {
+            background: linear-gradient(135deg, #c5a059 0%, #f3e5ab 50%, #c5a059 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+        .bg-gradient-logo {
+            background: linear-gradient(135deg, #c5a059 0%, #f3e5ab 50%, #c5a059 100%);
+            color: #110804;
+        }
+        .decorative-lines hr {
+            margin: 3px 0;
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, #c5a059, #f3e5ab, #c5a059);
+            opacity: 0.9;
+        }
+        .faq-content {
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+        .faq-content.open {
+            max-height: 500px;
+            padding-bottom: 1.5rem;
+        }
+        .faq-icon { transition: transform 0.3s ease; }
+        .faq-icon.open { transform: rotate(180deg); }
+        @keyframes pulse-glow-green {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .fab-pulse-green { animation: pulse-glow-green 2s infinite; }
+        .chat-widget-open { transform: scale(1); opacity: 1; pointer-events: auto; }
+        .chat-widget-closed { transform: scale(0.9) translateY(20px); opacity: 0; pointer-events: none; }
+        .typed-cursor { color: #e57b15; font-weight: bold; }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        @keyframes kenburns {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.15); }
+        }
+        .animate-kenburns {
+            animation: kenburns 15s ease-out forwards;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-scroll {
+            animation: scroll 35s linear infinite;
+        }
+        .pause-on-hover:hover .animate-scroll {
+            animation-play-state: paused;
+        }
+        body { top: 0px !important; position: static !important; }
+        .goog-te-banner-frame.skiptranslate, .skiptranslate iframe { display: none !important; }
+        #goog-gt-tt { display: none !important; }
+        .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
+        .typing-indicator span {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background-color: #4b5563;
+            border-radius: 50%;
+            margin: 0 2px;
+            animation: typing-bounce 1.4s infinite ease-in-out both;
+        }
+        .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+        .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes typing-bounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
         @keyframes shimmer {
             0% { transform: translateX(-200%) skewX(-45deg); }
             100% { transform: translateX(200%) skewX(-45deg); }
@@ -110,7 +194,7 @@
                 </div>
             </div>
             <div class="flex space-x-3 pt-2 md:pt-0 items-center">
-                <button onclick="toggleLanguage()" class="bg-navy-card text-gold border border-gold px-3 py-1.5 rounded text-xs font-bold hover:bg-gold hover:text-blue-950 transition flex items-center shadow-md mr-1 md:mr-3" aria-label="Translate to Hindi">
+                <button onclick="toggleLanguage()" class="bg-navy-card text-gold border border-gold px-3 py-1.5 rounded text-xs font-bold hover:bg-gold hover:text-navy-deep transition flex items-center shadow-md mr-1 md:mr-3" aria-label="Translate to Hindi">
                     <i class="fas fa-language mr-1.5 text-sm"></i> <span class="lang-text-span">हिन्दी</span>
                 </button>
                 <div class="hidden sm:flex space-x-4 items-center text-lg drop-shadow-sm">
@@ -123,7 +207,7 @@
     <nav class="bg-navy-card text-white sticky top-0 z-[9999] shadow-lg border-b border-navy-border/50" itemscope itemtype="https://schema.org/SiteNavigationElement">
         <div class="px-4 md:px-12 py-3 lg:py-4 flex justify-between items-center">
             <div class="lg:hidden flex items-center">
-                <a href="index.html#home" class="flex items-center font-serif italic font-bold tracking-wide" title="Home - Advocate Divit Vinod">
+                <a href="#home" class="flex items-center font-serif italic font-bold tracking-wide" title="Home - Advocate Divit Vinod">
                     <img src="https://i.ibb.co/xKXnHtwF/Screenshot-2026-08-30-201132.png" alt="Advocate Divit Vinod Profile" class="w-8 h-8 rounded-full object-cover mr-2 border-2 border-gold shadow-sm" loading="lazy">
                     <div class="flex flex-col leading-tight">
                         <span class="text-[16px] md:text-lg text-gradient">Patliputra Law & Retainers</span>
@@ -133,35 +217,49 @@
             </div>
 
             <div class="hidden lg:flex space-x-4 xl:space-x-6 text-xs font-semibold tracking-wider">
-                <a itemprop="url" href="index.html#home" class="hover:text-gold transition flex items-center group" title="Best Lawyer in Patna"><i class="fas fa-home mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> <span itemprop="name">HOME</span></a>
+                <a itemprop="url" href="#home" class="text-gold flex items-center group" title="Best Lawyer in Patna"><i class="fas fa-home mr-2 group-hover:text-white transition"></i> <span itemprop="name">HOME</span></a>
                                 <div class="relative group z-[9999]">
-                    <a itemprop="url" href="index.html#about" class="hover:text-gold transition flex items-center group py-2" title="Advocate Divit Vinod Profile">
+                    <a itemprop="url" href="#about" class="hover:text-gold transition flex items-center group py-2" title="Advocate Divit Vinod Profile">
                         <i class="fas fa-user-tie mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> 
                         <span itemprop="name">PROFILE</span>
                         <i class="fas fa-chevron-down ml-1.5 text-[10px] text-gold opacity-70 group-hover:opacity-100 transition"></i>
                     </a>
                     <div class="absolute left-0 top-[100%] w-52 bg-white border border-gray-100 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999] rounded-md overflow-hidden">
-                        <a href="index.html#about" class="block px-4 py-3 text-blue-950 hover:bg-gold hover:text-white font-bold text-xs border-b border-gray-100 transition">Advocate Divit Vinod</a>
-                        <a href="index.html#team" class="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-gold text-xs border-b border-gray-100 transition">Core Team Members</a>
-                        <a href="index.html#testimonials" class="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-gold text-xs transition">Client Testimonials</a>
+                        <a href="#about" class="block px-4 py-3 text-navy-deep hover:bg-gold hover:text-white font-bold text-xs border-b border-gray-100 transition">Advocate Divit Vinod</a>
+                        <a href="#team" class="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-gold text-xs border-b border-gray-100 transition">Core Team Members</a>
+                        <a href="#testimonials" class="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-gold text-xs transition">Client Testimonials</a>
                     </div>
                 </div>
-                <a itemprop="url" href="practice-areas.html" class="text-gold flex items-center group" title="Top Criminal and Divorce Services"><i class="fas fa-briefcase mr-2 group-hover:text-white transition"></i> <span itemprop="name">PRACTICE AREAS</span></a>
-                <a itemprop="url" href="index.html#outcomes" class="hover:text-gold transition flex items-center group" title="Successful Case Results"><i class="fas fa-gavel mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> <span itemprop="name">OUTCOMES</span></a>
-                <a itemprop="url" href="index.html#blog" class="hover:text-gold transition flex items-center group" title="Legal Blog and Q&A"><i class="fas fa-newspaper mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> <span itemprop="name">BLOG & Q&A</span></a>
-                <a itemprop="url" href="index.html#youtube" class="hover:text-gold transition flex items-center group" title="Legal Guide YouTube Channel"><i class="fab fa-youtube mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> <span itemprop="name">YOUTUBE</span></a>
                                 <div class="relative group z-[9999]">
-                    <a itemprop="url" href="index.html#faq" class="hover:text-gold transition flex items-center group py-2" title="Frequently Asked Legal Questions">
+                    <a itemprop="url" href="#practice" class="hover:text-gold transition flex items-center group py-2" title="Top Criminal and Divorce Services">
+                        <i class="fas fa-briefcase mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> 
+                        <span itemprop="name">PRACTICE AREAS</span>
+                        <i class="fas fa-chevron-down ml-1.5 text-[10px] text-gold opacity-70 group-hover:opacity-100 transition"></i>
+                    </a>
+                    <div class="absolute left-0 top-[100%] w-56 bg-white border border-gray-100 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999] rounded-md overflow-hidden">
+                        <a href="practice-areas.html" class="block px-4 py-3 text-navy-deep hover:bg-gold hover:text-white font-bold text-xs border-b border-gray-100 transition">View All Practice Areas</a>
+                        <a href="practice-areas.html#high-court" class="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-gold text-xs border-b border-gray-100 transition">High Court Matters</a>
+                        <a href="practice-areas.html#corporate" class="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-gold text-xs border-b border-gray-100 transition">Corporate & Commercial</a>
+                        <a href="practice-areas.html#real-estate" class="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-gold text-xs border-b border-gray-100 transition">Real Estate & Property</a>
+                        <a href="practice-areas.html#criminal" class="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-gold text-xs border-b border-gray-100 transition">Criminal Defense</a>
+                        <a href="practice-areas.html#family" class="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-gold text-xs border-b border-gray-100 transition">Family & Divorce Law</a>
+                        <a href="practice-areas.html#municipal-notary" class="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-gold text-xs transition">Municipal & Notary</a>
+                    </div>
+                </div>
+                <a itemprop="url" href="#how-we-work" class="hover:text-gold transition flex items-center group" title="How We Work"><i class="fas fa-project-diagram mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> <span itemprop="name">PROCESS</span></a>
+                <a itemprop="url" href="#blog" class="hover:text-gold transition flex items-center group" title="Legal Blog and Q&A"><i class="fas fa-newspaper mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> <span itemprop="name">INSIGHTS</span></a>
+                <div class="relative group z-[9999]">
+                    <a itemprop="url" href="#faq" class="hover:text-gold transition flex items-center group py-2" title="Frequently Asked Legal Questions">
                         <i class="fas fa-circle-question mr-2 text-gold opacity-70 group-hover:opacity-100 transition"></i> 
                         <span itemprop="name">FAQ</span>
                         <i class="fas fa-chevron-down ml-1.5 text-[10px] text-gold opacity-70 group-hover:opacity-100 transition"></i>
                     </a>
                     <div class="absolute right-0 lg:left-0 xl:right-0 top-[100%] w-56 bg-white border border-gray-100 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[9999] rounded-md overflow-hidden">
-                        <a href="index.html#faq" class="block px-4 py-3 text-blue-950 hover:bg-gold hover:text-white font-bold text-xs border-b border-gray-100 transition">View All FAQs</a>
-                        <a href="index.html#faq" class="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-gold text-xs border-b border-gray-100 transition">Consultation Process</a>
-                        <a href="index.html#faq" class="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-gold text-xs border-b border-gray-100 transition">Lawyer Fees in Patna</a>
-                        <a href="index.html#faq" class="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-gold text-xs border-b border-gray-100 transition">Divorce Timeline</a>
-                        <a href="index.html#faq" class="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-gold text-xs transition">False Accusation Rights</a>
+                        <a href="#faq" class="block px-4 py-3 text-navy-deep hover:bg-gold hover:text-white font-bold text-xs border-b border-gray-100 transition">View All FAQs</a>
+                        <a href="#faq" class="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-gold text-xs border-b border-gray-100 transition">Consultation Process</a>
+                        <a href="#faq" class="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-gold text-xs border-b border-gray-100 transition">Lawyer Fees in Patna</a>
+                        <a href="#faq" class="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-gold text-xs border-b border-gray-100 transition">Divorce Timeline</a>
+                        <a href="#faq" class="block px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-gold text-xs transition">False Accusation Rights</a>
                     </div>
                 </div>
             </div>
@@ -171,7 +269,7 @@
                     <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm"></i>
                     <input type="text" id="nav-search-desktop" onkeypress="executeNavSearch(event, this.value)" placeholder="Search articles..." aria-label="Search articles" class="w-40 xl:w-48 bg-navy-base border border-navy-border text-gray-200 text-xs p-2 pl-9 rounded-full focus:outline-none focus:border-gold transition placeholder-gray-500">
                 </div>
-                <a href="index.html#contact" class="border border-gold text-gold text-xs px-4 py-2 hover:bg-gold hover:text-blue-950 transition flex items-center whitespace-nowrap" title="Get Free Legal Consultation">
+                <a href="#contact" class="border border-gold text-gold text-xs px-4 py-2 hover:bg-gold hover:text-navy-deep transition flex items-center whitespace-nowrap" title="Get Free Legal Consultation">
                     <i class="far fa-calendar-check mr-2"></i> Free Consultation
                 </a>
             </div>
@@ -183,21 +281,20 @@
             </div>
         </div>
 
-        <div id="mobile-menu" class="hidden lg:hidden bg-navy-base flex-col text-sm border-t border-navy-border">
+        <div id="mobile-menu" class="hidden lg:hidden bg-navy-deep flex-col text-sm border-t border-navy-border">
             <div class="px-4 py-3 border-b border-navy-border">
                 <div class="relative">
                     <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm"></i>
-                    <input type="text" id="nav-search-mobile" onkeypress="executeNavSearch(event, this.value)" placeholder="Search articles or Q&A (Press Enter)..." aria-label="Search articles mobile" class="w-full bg-[#1a0d08] border border-navy-border text-gray-200 text-xs p-3 pl-9 rounded-full focus:outline-none focus:border-gold transition">
+                    <input type="text" id="nav-search-mobile" onkeypress="executeNavSearch(event, this.value)" placeholder="Search articles or Q&A (Press Enter)..." aria-label="Search articles mobile" class="w-full bg-navy-deep border border-navy-border text-gray-200 text-xs p-3 pl-9 rounded-full focus:outline-none focus:border-gold transition">
                 </div>
             </div>
-            <a href="index.html#home" class="mobile-link px-4 py-3 border-b border-navy-border hover:text-gold"><i class="fas fa-home w-6 text-center"></i> HOME</a>
-            <a href="index.html#about" class="mobile-link px-4 py-3 border-b border-navy-border hover:text-gold"><i class="fas fa-user-tie w-6 text-center"></i> PROFILE</a>
-            <a href="practice-areas.html" class="mobile-link text-gold px-4 py-3 border-b border-navy-border"><i class="fas fa-briefcase w-6 text-center"></i> PRACTICE AREAS</a>
-            <a href="index.html#outcomes" class="mobile-link px-4 py-3 border-b border-navy-border hover:text-gold"><i class="fas fa-gavel w-6 text-center"></i> OUTCOMES</a>
-            <a href="index.html#blog" class="mobile-link px-4 py-3 border-b border-navy-border hover:text-gold"><i class="fas fa-newspaper w-6 text-center"></i> BLOG & Q&A</a>
-            <a href="index.html#youtube" class="mobile-link px-4 py-3 border-b border-navy-border hover:text-gold"><i class="fab fa-youtube w-6 text-center"></i> YOUTUBE</a>
-            <a href="index.html#faq" class="mobile-link px-4 py-3 border-b border-navy-border hover:text-gold"><i class="fas fa-circle-question w-6 text-center"></i> FAQ</a>
-            <a href="index.html#contact" class="mobile-link px-4 py-3 border-b border-navy-border hover:text-gold"><i class="fas fa-envelope w-6 text-center"></i> CONTACT</a>
+            <a href="#home" class="mobile-link text-gold px-4 py-3 border-b border-navy-border"><i class="fas fa-home w-6 text-center"></i> HOME</a>
+            <a href="#about" class="mobile-link px-4 py-3 border-b border-navy-border hover:text-gold"><i class="fas fa-user-tie w-6 text-center"></i> PROFILE</a>
+            <a href="#practice" class="mobile-link px-4 py-3 border-b border-navy-border hover:text-gold"><i class="fas fa-briefcase w-6 text-center"></i> PRACTICE AREAS</a>
+            <a href="#how-we-work" class="mobile-link px-4 py-3 border-b border-navy-border hover:text-gold"><i class="fas fa-project-diagram w-6 text-center"></i> PROCESS</a>
+              <a href="#blog" class="mobile-link px-4 py-3 border-b border-navy-border hover:text-gold"><i class="fas fa-newspaper w-6 text-center"></i> BLOG & Q&A</a>
+            <a href="#faq" class="mobile-link px-4 py-3 border-b border-navy-border hover:text-gold"><i class="fas fa-circle-question w-6 text-center"></i> FAQ</a>
+            <a href="#contact" class="mobile-link px-4 py-3 border-b border-navy-border hover:text-gold"><i class="fas fa-envelope w-6 text-center"></i> CONTACT</a>
         </div>
     </nav>
 
@@ -205,7 +302,7 @@
         <div class="max-w-6xl mx-auto">
             <div class="flex items-center justify-center w-full mb-12">
                 <div class="decorative-lines flex flex-col w-12 md:w-24 mr-6"><hr><hr><hr></div>
-                <h1 class="font-serif italic text-3xl md:text-5xl font-bold tracking-wide text-center flex flex-col items-center text-blue-950">
+                <h1 class="font-serif italic text-3xl md:text-5xl font-bold tracking-wide text-center flex flex-col items-center text-navy-deep">
                     <i class="fas fa-balance-scale text-gold mb-4 text-4xl"></i>
                     <span>A Complete Legal Infrastructure</span>
                     <span class="text-xl md:text-2xl text-slate-600 mt-3 font-sans not-italic font-medium">We Leave No Branch of Law Uncovered.</span>
@@ -217,7 +314,7 @@
                 <!-- 1 -->
                 <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8 hover:border-gold transition duration-300 group flex flex-col">
                     <div class="text-gold text-4xl mb-4"><i class="fas fa-university"></i></div>
-                    <h3 class="font-serif font-bold text-xl text-blue-950 mb-4 group-hover:text-gold transition">1. High Court, Constitutional & Appellate Law</h3>
+                    <h3 class="font-serif font-bold text-xl text-navy-deep mb-4 group-hover:text-gold transition">1. High Court, Constitutional & Appellate Law</h3>
                     <ul class="text-slate-700 text-sm space-y-2 list-disc list-inside">
                         <li>Writ Petitions (Article 226/227) against arbitrary state/administrative action.</li>
                         <li>Public Interest Litigation (PIL).</li>
@@ -229,7 +326,7 @@
                 <!-- 2 -->
                 <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8 hover:border-gold transition duration-300 group flex flex-col">
                     <div class="text-gold text-4xl mb-4"><i class="fas fa-building"></i></div>
-                    <h3 class="font-serif font-bold text-xl text-blue-950 mb-4 group-hover:text-gold transition">2. Corporate Retainership & Commercial Law</h3>
+                    <h3 class="font-serif font-bold text-xl text-navy-deep mb-4 group-hover:text-gold transition">2. Corporate Retainership & Commercial Law</h3>
                     <ul class="text-slate-700 text-sm space-y-2 list-disc list-inside">
                         <li>Outsourced In-House Counsel (Daily Legal Operations).</li>
                         <li>Commercial Contract Drafting (NDAs, SLAs, Joint Ventures, EPCs).</li>
@@ -241,7 +338,7 @@
                 <!-- 3 -->
                 <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8 hover:border-gold transition duration-300 group flex flex-col">
                     <div class="text-gold text-4xl mb-4"><i class="fas fa-piggy-bank"></i></div>
-                    <h3 class="font-serif font-bold text-xl text-blue-950 mb-4 group-hover:text-gold transition">3. Banking, Finance & Debt Recovery</h3>
+                    <h3 class="font-serif font-bold text-xl text-navy-deep mb-4 group-hover:text-gold transition">3. Banking, Finance & Debt Recovery</h3>
                     <ul class="text-slate-700 text-sm space-y-2 list-disc list-inside">
                         <li>DRT (Debt Recovery Tribunal) & DRAT Litigation.</li>
                         <li>SARFAESI Act Enforcement and Defense against Bank Auctions.</li>
@@ -253,7 +350,7 @@
                 <!-- 4 -->
                 <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8 hover:border-gold transition duration-300 group flex flex-col">
                     <div class="text-gold text-4xl mb-4"><i class="fas fa-home"></i></div>
-                    <h3 class="font-serif font-bold text-xl text-blue-950 mb-4 group-hover:text-gold transition">4. Real Estate, Revenue & Property Law</h3>
+                    <h3 class="font-serif font-bold text-xl text-navy-deep mb-4 group-hover:text-gold transition">4. Real Estate, Revenue & Property Law</h3>
                     <ul class="text-slate-700 text-sm space-y-2 list-disc list-inside">
                         <li>Land Mutation (Dakhil Kharij): End-to-end processing and dispute resolution.</li>
                         <li>Property Registration: Sale Deeds, Lease Agreements, Gift Deeds.</li>
@@ -265,7 +362,7 @@
                 <!-- 5 -->
                 <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8 hover:border-gold transition duration-300 group flex flex-col">
                     <div class="text-gold text-4xl mb-4"><i class="fas fa-city"></i></div>
-                    <h3 class="font-serif font-bold text-xl text-blue-950 mb-4 group-hover:text-gold transition">5. Municipal, Local Body & Panchayat Law</h3>
+                    <h3 class="font-serif font-bold text-xl text-navy-deep mb-4 group-hover:text-gold transition">5. Municipal, Local Body & Panchayat Law</h3>
                     <ul class="text-slate-700 text-sm space-y-2 list-disc list-inside">
                         <li>Municipal Corporation Disputes (Patna Municipal Corporation, etc.).</li>
                         <li>Building Plan Approvals and Sanction Disputes.</li>
@@ -278,7 +375,7 @@
                 <!-- 6 -->
                 <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8 hover:border-gold transition duration-300 group flex flex-col">
                     <div class="text-gold text-4xl mb-4"><i class="fas fa-file-signature"></i></div>
-                    <h3 class="font-serif font-bold text-xl text-blue-950 mb-4 group-hover:text-gold transition">6. Drafting, Notary & Legal Administration</h3>
+                    <h3 class="font-serif font-bold text-xl text-navy-deep mb-4 group-hover:text-gold transition">6. Drafting, Notary & Legal Administration</h3>
                     <ul class="text-slate-700 text-sm space-y-2 list-disc list-inside">
                         <li>Affidavits: Drafting and execution of all types of legal affidavits.</li>
                         <li>Notary Public Services: Document attestation and notarization.</li>
@@ -290,7 +387,7 @@
                 <!-- 7 -->
                 <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8 hover:border-gold transition duration-300 group flex flex-col">
                     <div class="text-gold text-4xl mb-4"><i class="fas fa-gavel"></i></div>
-                    <h3 class="font-serif font-bold text-xl text-blue-950 mb-4 group-hover:text-gold transition">7. Criminal Defense & White-Collar Crimes</h3>
+                    <h3 class="font-serif font-bold text-xl text-navy-deep mb-4 group-hover:text-gold transition">7. Criminal Defense & White-Collar Crimes</h3>
                     <ul class="text-slate-700 text-sm space-y-2 list-disc list-inside">
                         <li>Anticipatory Bail, Regular Bail, and Transit Bail.</li>
                         <li>Economic Offences: ED (Enforcement Directorate), PMLA, and EOU investigations.</li>
@@ -302,7 +399,7 @@
                 <!-- 8 -->
                 <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8 hover:border-gold transition duration-300 group flex flex-col">
                     <div class="text-gold text-4xl mb-4"><i class="fas fa-handshake"></i></div>
-                    <h3 class="font-serif font-bold text-xl text-blue-950 mb-4 group-hover:text-gold transition">8. Civil Litigation & Dispute Resolution</h3>
+                    <h3 class="font-serif font-bold text-xl text-navy-deep mb-4 group-hover:text-gold transition">8. Civil Litigation & Dispute Resolution</h3>
                     <ul class="text-slate-700 text-sm space-y-2 list-disc list-inside">
                         <li>Suits for Specific Performance of Contracts.</li>
                         <li>Suits for Permanent and Mandatory Injunctions.</li>
@@ -314,7 +411,7 @@
                 <!-- 9 -->
                 <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8 hover:border-gold transition duration-300 group flex flex-col">
                     <div class="text-gold text-4xl mb-4"><i class="fas fa-users"></i></div>
-                    <h3 class="font-serif font-bold text-xl text-blue-950 mb-4 group-hover:text-gold transition">9. Family, Matrimonial & Succession Law</h3>
+                    <h3 class="font-serif font-bold text-xl text-navy-deep mb-4 group-hover:text-gold transition">9. Family, Matrimonial & Succession Law</h3>
                     <ul class="text-slate-700 text-sm space-y-2 list-disc list-inside">
                         <li>Mutual Consent and Contested Divorce.</li>
                         <li>Defense against 498A (Cruelty) & Dowry Prohibition Act.</li>
@@ -326,7 +423,7 @@
                 <!-- 10 -->
                 <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8 hover:border-gold transition duration-300 group flex flex-col">
                     <div class="text-gold text-4xl mb-4"><i class="fas fa-user-tie"></i></div>
-                    <h3 class="font-serif font-bold text-xl text-blue-950 mb-4 group-hover:text-gold transition">10. Service, Employment & Labor Law</h3>
+                    <h3 class="font-serif font-bold text-xl text-navy-deep mb-4 group-hover:text-gold transition">10. Service, Employment & Labor Law</h3>
                     <ul class="text-slate-700 text-sm space-y-2 list-disc list-inside">
                         <li>CAT (Central Administrative Tribunal) and State Administrative Tribunal matters.</li>
                         <li>Government Employee Disputes: Suspension, termination, promotion, and pension issues.</li>
@@ -337,7 +434,7 @@
                 <!-- 11 -->
                 <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-8 hover:border-gold transition duration-300 group flex flex-col">
                     <div class="text-gold text-4xl mb-4"><i class="fas fa-stethoscope"></i></div>
-                    <h3 class="font-serif font-bold text-xl text-blue-950 mb-4 group-hover:text-gold transition">11. Regulatory, Medical & Consumer Law</h3>
+                    <h3 class="font-serif font-bold text-xl text-navy-deep mb-4 group-hover:text-gold transition">11. Regulatory, Medical & Consumer Law</h3>
                     <ul class="text-slate-700 text-sm space-y-2 list-disc list-inside">
                         <li>Medical Negligence Defense for Doctors and Hospitals.</li>
                         <li>Clinical Establishments Act Compliance.</li>
@@ -348,16 +445,77 @@
             </div>
             
             <div class="mt-16 text-center">
-                <a href="index.html#contact" class="inline-block bg-gradient-logo font-bold text-sm tracking-wider px-10 py-4 hover:opacity-90 transition shadow-lg rounded text-blue-950">
+                <a href="index.html#contact" class="inline-block bg-gradient-logo font-bold text-sm tracking-wider px-10 py-4 hover:opacity-90 transition shadow-lg rounded text-navy-deep">
                     <i class="fas fa-calendar-check mr-2 text-lg"></i> BOOK A STRATEGIC CONSULTATION
                 </a>
             </div>
         </div>
     </main>
 
-    <footer itemscope itemtype="https://schema.org/LegalService" class="bg-navy-base text-gray-300 border-t border-gold text-sm">
-        <div class="text-center py-6 border-t border-navy-border mt-8">
-            <p>&copy; 2026 Patliputra Law & Retainers. All rights reserved.</p>
+    <footer itemscope itemtype="https://schema.org/LegalService" class="bg-white text-white pt-16 pb-24 sm:pb-8 border-t border-gold shadow-inner" data-aos="fade-up">
+        <div class="max-w-6xl mx-auto px-4 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-8 border-b border-navy-border pb-12">
+                
+                <div>
+                    <h2 class="font-serif italic font-bold text-3xl mb-4 tracking-wide flex items-center">
+                        <img src="https://i.ibb.co/xKXnHtwF/Screenshot-2026-08-30-201132.png" alt="Advocate Divit Vinod Profile" class="w-10 h-10 rounded-full object-cover mr-3 border-2 border-gold shadow-sm" loading="lazy">
+                        <span class="text-gradient">Adv. Divit Vinod</span>
+                    </h2>
+                    <p class="text-gray-300 text-sm mb-6 leading-relaxed">
+                        Top-rated advocate in Patna offering meticulous and client-focused legal solutions across civil, criminal, and family matters.
+                    </p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="https://www.youtube.com/@AdvocateDivitVinod" target="_blank" class="w-8 h-8 rounded-full border border-[#FF0000]/50 flex items-center justify-center text-[#FF0000] hover:bg-[#FF0000] hover:border-[#FF0000] hover:text-white transition shadow-sm" aria-label="YouTube Profile" title="YouTube Profile"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/in/divit-vinod-377891349/" target="_blank" class="w-8 h-8 rounded-full border border-[#0A66C2]/50 flex items-center justify-center text-[#0A66C2] hover:bg-[#0A66C2] hover:border-[#0A66C2] hover:text-white transition shadow-sm" aria-label="LinkedIn Profile" title="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://lawrato.com/advocate-divit-vinod" target="_blank" class="w-8 h-8 rounded-full border border-gold/50 flex items-center justify-center text-gold hover:bg-gold hover:border-gold hover:text-white transition shadow-sm" aria-label="LawRato Profile" title="LawRato Profile"><i class="fas fa-balance-scale"></i></a>
+                        <a href="https://www.justdial.com/Patna/Adv-Divit-Vinod-Advocate-Divit-Vinod-North-Shastri-Nagar/0612PX612-X612-250329125937-K8J2_BZDET" target="_blank" class="w-8 h-8 rounded-full border border-[#ff6600]/50 flex items-center justify-center text-[#ff6600] hover:bg-[#ff6600] hover:border-[#ff6600] hover:text-white transition shadow-sm" aria-label="JustDial Profile" title="JustDial Profile"><i class="fas fa-star"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-serif italic text-xl mb-6"><span class="text-gradient">Quick Links</span></h3>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li><a href="#home" class="hover:text-gold transition flex items-center"><i class="fas fa-home text-[10px] text-gold mr-3 w-3"></i> Home</a></li>
+                        <li><a href="#about" class="hover:text-gold transition flex items-center"><i class="fas fa-user-tie text-[10px] text-gold mr-3 w-3"></i> Profile</a></li>
+                        <li><a href="#practice" class="hover:text-gold transition flex items-center"><i class="fas fa-briefcase text-[10px] text-gold mr-3 w-3"></i> Practice Areas</a></li>
+                        <li><a href="#blog" class="hover:text-gold transition flex items-center"><i class="fas fa-newspaper text-[10px] text-gold mr-3 w-3"></i> Blog Articles</a></li>
+                        <li><a href="#youtube" class="hover:text-gold transition flex items-center"><i class="fab fa-youtube text-[10px] text-gold mr-3 w-3"></i> YouTube Channel</a></li>
+                        <li><a href="#contact" class="hover:text-gold transition flex items-center"><i class="fas fa-envelope text-[10px] text-gold mr-3 w-3"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-serif italic text-xl mb-6"><span class="text-gradient">Contact Info</span></h3>
+                    <ul class="space-y-4 text-sm text-gray-300">
+                        <li class="flex items-start"><i class="fas fa-phone text-gold mt-1 mr-3"></i> 
+                            <div><a href="tel:+919918324120" class="hover:text-gold transition" itemprop="telephone">+91 99183 24120</a></div>
+                        </li>
+                        <li class="flex items-start"><i class="fas fa-envelope text-gold mt-1 mr-3"></i> 
+                            <a href="mailto:advocatedivitvinod@gmail.com" class="hover:text-gold transition" itemprop="email">advocatedivitvinod@gmail.com</a>
+                        </li>
+                        <li class="flex items-start"><i class="fas fa-location-dot text-gold mt-1 mr-3"></i> <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="streetAddress">Lawyer's Association, Room No. 3, Table No. 4, Patna High Court</span>, <span itemprop="addressRegion">Bihar</span></span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-navy-border/30 pt-6 pb-6 mb-6">
+                <div class="text-gold font-bold mb-2 text-sm uppercase tracking-widest"><i class="fas fa-gavel mr-2"></i>Disclaimer & Bar Council of India Notice</div>
+                <p class="text-xs text-gray-600 leading-relaxed text-justify opacity-80">
+                    As per the rules of the Bar Council of India, law firms and individual advocates are not permitted to solicit work or advertise. By accessing this website, you acknowledge that you are seeking information about Advocate Divit Vinod of your own accord and that there has been no form of solicitation, advertisement, or inducement by the firm or its members. The content on this website is strictly for informational purposes only and should not be construed as legal advice. Any reliance on the information provided herein is solely at the user's risk.
+                </p>
+            </div>
+
+            <div class="text-center text-gray-600 text-xs flex flex-col items-center space-y-4">
+                <p>&copy; 2026 Advocate Divit Vinod. All rights reserved.</p>
+                <div class="mt-2 text-slate-600 flex flex-col items-center justify-center gap-1 border-t border-navy-border/30 pt-4 w-full max-w-xs">
+                      <span class="font-medium text-[10px] tracking-widest uppercase">Developed By</span>
+                      <a href="https://falconixdigital.netlify.app" target="_blank" rel="noopener noreferrer" class="flex items-center hover:scale-105 hover:opacity-90 transition-all duration-300">
+                          <img src="https://i.ibb.co/7Nz80xdL/Falconix-Digital-Logo.png" alt="Falconix Icon" class="h-5 w-auto mr-2" loading="lazy">
+                          <span class="text-white font-bold text-sm tracking-wide" style="font-family: 'Montserrat', sans-serif;">Falconix</span>
+                          <span class="text-[#8b5cf6] font-bold text-sm tracking-wide ml-1" style="font-family: 'Montserrat', sans-serif;">Digital</span>
+                      </a>
+                  </div>
+            </div>
         </div>
     </footer>
     <script>
@@ -398,14 +556,14 @@
         };
     </script>
     <!-- Mobile Floating Action Bar -->
-    <div class="md:hidden fixed bottom-4 left-4 right-4 z-[100] flex justify-between gap-2 p-1.5 backdrop-blur-lg bg-navy-base/90 border border-navy-border rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.7)] pointer-events-auto">
-        <a href="tel:" class="" itemprop="telephone">
+    <div class="md:hidden fixed bottom-4 left-4 right-4 z-[100] flex justify-between gap-2 p-1.5 backdrop-blur-lg bg-white/90 border border-navy-border rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.7)] pointer-events-auto">
+        <a href="tel:+919918324120" class="flex-1 bg-navy-card text-gold text-[8px] font-bold uppercase tracking-wider py-2 rounded-lg flex flex-col items-center justify-center border border-gold/30 shadow-md active:scale-95 transition" itemprop="telephone">
             <i class="fas fa-phone-alt mb-1 text-sm"></i> Call Now
         </a>
         <a href="https://wa.me/919918324120" class="flex-1 bg-[#25D366] text-white text-[8px] font-bold uppercase tracking-wider py-2 rounded-lg flex flex-col items-center justify-center shadow-md active:scale-95 transition">
             <i class="fab fa-whatsapp mb-1 text-sm"></i> WhatsApp
         </a>
-        <a href="https://www.google.com/maps/place/Advocate+Divit+Vinod+at+Patna+High+Court/@25.615773,85.0960076,17z/data=!3m1!4b1!4m6!3m5!1s0x39ed57250084a5bb:0xefb832a151524e22!8m2!3d25.615773!4d85.0960076!16s%2Fg%2F11vwvh23q7!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D" class="flex-1 bg-navy-card text-gray-200 text-[8px] font-bold uppercase tracking-wider py-2 rounded-lg flex flex-col items-center justify-center border border-white/10 shadow-md active:scale-95 transition">
+        <a href="https://www.google.com/maps/place/Advocate+Divit+Vinod+at+Patna+High+Court/@25.615773,85.0960076,17z/data=!3m1!4b1!4m6!3m5!1s0x39ed57250084a5bb:0xefb832a151524e22!8m2!3d25.615773!4d85.0960076!16s%2Fg%2F11vwvh23q7!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D" class="flex-1 bg-navy-card text-gray-800 text-[8px] font-bold uppercase tracking-wider py-2 rounded-lg flex flex-col items-center justify-center border border-white/10 shadow-md active:scale-95 transition">
             <i class="fas fa-map-marker-alt mb-1 text-sm"></i> Directions
         </a>
     </div>

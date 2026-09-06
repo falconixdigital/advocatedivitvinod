@@ -1961,7 +1961,7 @@
         ];
 
         // Advanced NLP-like matching function
-        let isWaitingForResponse = false; let awaitingWhatsAppPermission = false; let lastUserQuery = ""; function getLocalResponse(userText) {
+        function getLocalResponse(userText) {
             const input = userText.toLowerCase().replace(/[^a-z0-9 ]/g, ''); // strip punctuation
             const words = input.split(' ').filter(w => w.length > 2); // ignore short words
 

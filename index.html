@@ -1891,103 +1891,82 @@
             if (indicator) indicator.remove();
         }
 
-        const localKnowledgeBase = [
-            {
-                category: "greeting",
-                keywords: ["hi", "hello", "hey", "namaste", "good morning", "good evening", "help"],
-                response: "Hello! Welcome to Advocate Divit Vinod's Virtual Assistant. How can I assist you with your legal matters today?"
-            },
-            {
-                category: "contact_phone",
-                keywords: ["phone", "call", "number", "contact", "mobile", "whatsapp", "reach"],
-                response: "You can reach Advocate Divit Vinod directly at +91 99183 24120. Our email is advocatedivitvinod@gmail.com."
-            },
-            {
-                category: "location_address",
-                keywords: ["where", "location", "address", "office", "visit", "patna", "patna", "chamber"],
-                response: "Our office is located at 104 Asha Suman Apartment, Near Lal Babu Market, Professor Colony, North Shastrinagar, Patna - 800 023, Bihar."
-            },
-            {
-                category: "hours_timing",
-                keywords: ["time", "hours", "open", "close", "when", "timing", "days"],
-                response: "We are open Monday to Sunday from 10:00 AM to 10:00 PM."
-            },
-            {
-                category: "criminal_law",
-                keywords: ["criminal", "bail", "anticipatory", "fraud", "police", "fir", "arrest", "jail", "defense"],
-                response: "Advocate Divit Vinod has extensive experience in Criminal Defense, including Anticipatory Bail, Regular Bail, Fraud Cases, and Police matters. Please call +91 99183 24120 for immediate assistance."
-            },
-            {
-                category: "family_law",
-                keywords: ["family", "divorce", "marriage", "wife", "husband", "dowry", "domestic violence", "maintenance", "child", "matrimonial"],
-                response: "We specialize in Family Law, resolving complex disputes through dialogue and litigation. This includes Mutual/Contested Divorce, Domestic Violence, and Dowry Cases."
-            },
-            {
-                category: "property_law",
-                keywords: ["property", "land", "real estate", "tenant", "landlord", "registration", "mutation", "dispute", "deed", "signature"],
-                response: "We offer comprehensive guidance on Property Law, including Land Registration, Landlord/Tenant Disputes, Real Estate transfers, and handling fraudulent deeds."
-            },
-            {
-                category: "corporate_law",
-                keywords: ["corporate", "startup", "business", "company", "contract", "liability"],
-                response: "For corporate matters, we provide expert legal consultancy for Startups, corporate disputes, business structuring, and contract law."
-            },
-            {
-                category: "courts",
-                keywords: ["court", "high court", "supreme court", "practice", "jurisdiction", "bankshall", "alipore", "patna"],
-                response: "Advocate Divit Vinod practices at the Patna High Court, Patna Civil Court, District Courts across Bihar, and the Supreme Court of India."
-            },
-            {
-                category: "experience_profile",
-                keywords: ["experience", "profile", "who", "degree", "qualification", "reviews", "rating", "lawrato", "years"],
-                response: "Advocate Divit Vinod holds B.Com (Hons), LL.B, and LL.M degrees. He has 25 years of intense litigation experience and is a LawRato Top Contributor with a 5.0/5 rating."
-            },
-            {
-                category: "youtube",
-                keywords: ["youtube", "video", "channel", "learn", "watch", "subscribe"],
-                response: "You can explore Indian law on our YouTube channel (@AdvocateDivitVinod) which has over 3.24K subscribers and 380+ informative videos."
-            },
-            {
-                category: "fees",
-                keywords: ["fee", "cost", "price", "charge", "money", "rupee", "how much"],
-                response: "The cost varies depending on the complexity of the matter. We offer transparent fee structures. Kindly contact us directly at +91 99183 24120 to discuss your specific requirements."
-            },
-            {
-                category: "consultation",
-                keywords: ["consultation", "meet", "appointment", "book", "bring", "meeting", "free legal consultation"],
-                response: "To book a consultation, call +91 99183 24120. Please bring relevant documents (contracts, notices, property deeds) and a list of questions to your meeting."
-            },
-            {
-                category: "how_to_get_bail",
-                keywords: ["how to get bail in patna", "where can i get bail lawyer near me"],
-                response: "To secure bail in Patna, you should immediately contact an experienced criminal lawyer to review your case and file for Anticipatory or Regular Bail at the Session Court or High Court. Contact us at +91 99183 24120 for emergency legal help."
-            },
-            {
-                category: "best_lawyer_queries",
-                keywords: ["who is the best criminal lawyer in patna", "which lawyer is best for divorce in patna"],
-                response: "Advocate Divit Vinod is highly regarded as one of the best criminal and divorce lawyers in the region, bringing 25+ years of litigation experience to the Patna High Court and District Courts."
-            },
-            {
-                category: "qna_fraud",
-                keywords: ["corporate fraud", "company fraud", "1968540", "breach of trust"],
-                response: "Under the BNS, company fraud amounts to Criminal Breach of Trust (Sec 316) and Cheating (Sec 318). The company can file an FIR. It's best to try settling the matter before a criminal case is filed."
-            },
-            {
-                category: "qna_divorce_summons",
-                keywords: ["summons", "siliguri", "kathmandu", "not received", "ex-parte"],
-                response: "If you haven't received official summons, appearance isn't strictly mandatory yet, but it's wise to track it to avoid ex-parte proceedings. Check with a local lawyer or police station regarding FIRs."
-            }
-        ];
+        
 
         let isWaitingForResponse = false;
         let awaitingWhatsAppPermission = false;
         let lastUserQuery = "";
 
-        function getLocalResponse(userText) {
-            const lowerInput = userText.toLowerCase();
+        const localKnowledgeBase = [
+            {
+                keywords: ["hi", "hello", "hey", "namaste", "good morning", "good evening", "help", "start", "welcome"],
+                response: "Hello! Welcome to Patliputra Law & Retainers. I am Advocate Divit Vinod's Advanced Virtual Assistant. I know everything about our firm, our team, our practice areas, and our clients. How can I assist you today?"
+            },
+            {
+                keywords: ["phone", "call", "number", "contact", "mobile", "whatsapp", "reach", "talk", "speak"],
+                response: "You can reach Advocate Divit Vinod directly for 24/7 legal assistance at +91 99183 24120. Our official email is advdivitvinod@gmail.com."
+            },
+            {
+                keywords: ["where", "location", "address", "office", "visit", "patna", "chamber", "map", "directions", "situated"],
+                response: "Our office is located at 104 Asha Suman Apartment, Near Lal Babu Market, Professor Colony, North Shastrinagar, Patna - 800 023, Bihar. We practice extensively at the Patna High Court."
+            },
+            {
+                keywords: ["time", "hours", "open", "close", "when", "timing", "days", "schedule", "appointment"],
+                response: "Our office is open Monday to Sunday from 10:00 AM to 10:00 PM. We are available 7 days a week to ensure justice never waits."
+            },
+            {
+                keywords: ["criminal", "bail", "anticipatory", "fraud", "police", "fir", "arrest", "jail", "defense", "murder", "bns", "ipc", "cheating"],
+                response: "Advocate Divit Vinod is a top-rated Criminal Lawyer in Patna with 25+ years of experience. We handle Anticipatory/Regular Bail, FIR Quashing, Murder, Fraud, Cyber Crime, and Domestic Violence cases. Need immediate help? Call +91 99183 24120."
+            },
+            {
+                keywords: ["family", "divorce", "marriage", "wife", "husband", "dowry", "domestic violence", "maintenance", "child", "custody", "matrimonial", "talaq", "alimony"],
+                response: "We specialize in Family Law, including Mutual & Contested Divorce, Child Custody, Maintenance (Alimony), Domestic Violence (498A), and Property Division. Advocate Kamlesh Kumar on our team is a Matrimonial Law Specialist."
+            },
+            {
+                keywords: ["property", "land", "real estate", "tenant", "landlord", "registration", "mutation", "dispute", "deed", "signature", "title", "ancestral", "eviction"],
+                response: "Our firm handles all Real Estate & Property Disputes, including Land Registration, Title Disputes, Mutation, Eviction, and Ancestral Property. Advocate Siddharth Krishna specializes in Civil & Property Law."
+            },
+            {
+                keywords: ["corporate", "startup", "business", "company", "contract", "liability", "banking", "nclt", "sarfaesi", "drt", "loan", "cheque bounce"],
+                response: "We act as Legal Retainers for major corporations and banks. We handle Commercial Litigation, Cheque Bounce, NCLT, DRT, and Corporate Compliance. Advocate Saloni Sinha is our Head of Compliance."
+            },
+            {
+                keywords: ["court", "high court", "supreme court", "practice", "jurisdiction", "civil court", "session court"],
+                response: "Advocate Divit Vinod practices primarily at the Patna High Court, as well as Patna Civil/Session Courts, District Courts across Bihar, and the Supreme Court of India."
+            },
+            {
+                keywords: ["experience", "profile", "who", "degree", "qualification", "reviews", "rating", "lawrato", "years", "divit", "vinod", "founder"],
+                response: "Advocate Divit Vinod (B.Com Hons, LL.B, LL.M) is the Lead Strategist and Founder of Patliputra Law & Retainers. With over 25 years of intense litigation experience, he is a LawRato Top Contributor with a 5.0/5 rating."
+            },
+            {
+                keywords: ["team", "lawyer", "advocate", "associate", "staff", "attorney", "member", "ankit", "saloni", "shivendra", "siddharth", "kamlesh", "manoj"],
+                response: "Our esteemed team includes: Adv. Ankit Kr. Singh (Economic Offences), Shri Manoj Kr. Ambastha (Senior Govt. Lawyer), Adv. Saloni Sinha (Compliance), Adv. Kamlesh Kumar (Matrimonial), Shri Shivendra Kr. Sinha (Criminal), and Adv. Siddharth Krishna (Civil/Property)."
+            },
+            {
+                keywords: ["client", "company", "bank", "jcb", "pnb", "ashok leyland", "vinfast", "retainer", "corporate client"],
+                response: "We are trusted by leading global and national institutions. Our esteemed clients include Punjab National Bank (PNB), Ashok Leyland, JCB, and VinFast. We serve as dedicated Legal Retainers for major corporations."
+            },
+            {
+                keywords: ["video", "youtube", "watch", "learn", "false case", "rights", "notice reply"],
+                response: "Advocate Divit Vinod regularly uploads legal awareness videos on YouTube. Topics include: How to fight false cases, What to do after an FIR is filed, Legal rights after arrest, and Legal Notice reply formats."
+            },
+            {
+                keywords: ["fee", "cost", "charge", "price", "money", "expensive", "affordable", "consultation fee"],
+                response: "Our consultation fees vary depending on the complexity of your case, but we pride ourselves on providing premium, top-tier legal representation. For a precise quote, please contact us directly at +91 99183 24120."
+            },
+            {
+                keywords: ["book", "appointment", "schedule", "meet", "consultation", "hire"],
+                response: "To schedule a consultation with Advocate Divit Vinod or our team, please email advdivitvinod@gmail.com or call our 24/7 helpline at +91 99183 24120. We will set up a meeting at our Patna office."
+            }
+        ];
+
+        // Advanced NLP-like matching function
+        let isWaitingForResponse = false; let awaitingWhatsAppPermission = false; let lastUserQuery = ""; function getLocalResponse(userText) {
+            const input = userText.toLowerCase().replace(/[^a-z0-9 ]/g, ''); // strip punctuation
+            const words = input.split(' ').filter(w => w.length > 2); // ignore short words
 
             if (awaitingWhatsAppPermission) {
-                if (lowerInput.match(/\b(yes|yep|sure|ok|yeah|y|ha|haan|yes please)\b/)) {
+                if (input.match(/\b(yes|yep|sure|ok|yeah|y|ha|haan|yes please|do it)\b/)) {
                     awaitingWhatsAppPermission = false;
                     setTimeout(() => {
                         const waMessage = `Hi, I need assistance regarding: "${lastUserQuery}"`;
@@ -1995,37 +1974,52 @@
                         toggleChatPopup(); 
                     }, 1500);
                     return "Redirecting you to our WhatsApp support team. Please wait...";
-                } else if (lowerInput.match(/\b(no|nope|nah|n|nahi)\b/)) {
+                } else if (input.match(/\b(no|nope|nah|n|nahi|stop)\b/)) {
                     awaitingWhatsAppPermission = false;
-                    return "Okay, no problem! Feel free to ask another question.";
+                    return "Okay, no problem! Feel free to ask me anything else about Patliputra Law & Retainers.";
                 } else {
-                    return "Please answer Yes or No. Connect with us on WhatsApp?";
+                    return "Please answer Yes or No. Shall I connect you with our human legal team on WhatsApp?";
                 }
             }
 
             let bestMatch = null;
-            let maxMatchCount = 0;
+            let highestScore = 0;
 
             for (const item of localKnowledgeBase) {
-                let matchCount = 0;
+                let score = 0;
+                
+                // Check for direct keyword matches
                 for (const keyword of item.keywords) {
-                    if (lowerInput.includes(keyword.toLowerCase())) {
-                        matchCount++;
+                    if (input.includes(keyword)) {
+                        score += 2; // Direct string inclusion is a strong match
                     }
                 }
-                if (matchCount > maxMatchCount) {
-                    maxMatchCount = matchCount;
+
+                // Check for word-by-word fuzzy matches
+                for (const word of words) {
+                    for (const keyword of item.keywords) {
+                        // If the word is at least 4 chars and is a substring of the keyword (or vice versa)
+                        if (word.length >= 4 && (keyword.includes(word) || word.includes(keyword))) {
+                            score += 1;
+                        }
+                    }
+                }
+
+                if (score > highestScore) {
+                    highestScore = score;
                     bestMatch = item;
                 }
             }
 
-            if (bestMatch && maxMatchCount > 0) {
+            // Confidence threshold
+            if (bestMatch && highestScore >= 2) {
                 return bestMatch.response;
             }
 
+            // Fallback
             awaitingWhatsAppPermission = true;
             lastUserQuery = userText; 
-            return "I am a local virtual assistant and may not understand complex queries. Would you like me to redirect you to our human legal team on WhatsApp? (Reply Yes or No)";
+            return "That's a very specific legal query. While I have the entire firm's data, I cannot give personalized legal advice. Would you like me to redirect you to our expert legal team on WhatsApp? (Reply Yes or No)";
         }
 
         window.handleUserMessage = function() {
